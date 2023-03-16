@@ -40,7 +40,7 @@ class ZoomApiHelper{
 			]
 		];
 
-		$zoomUserId = 'U3tpEUkeQA6uSHNAeykwXw';
+		$zoomUserId = '    ';
 
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); // Skip SSL Verification
@@ -100,6 +100,7 @@ class ZoomApiHelper{
     // echo ZoomApiHelper::createZoomMeeting();  
 
 ?>
+<<<<<<< HEAD
 
 
 
@@ -191,3 +192,5 @@ ZoomApiHelper::createZoomMeeting();
     <?php include '/layouts/footer.php';?>
     
 	
+=======
+>>>>>>> 4f5681ac09e10e801e747222c49b5782c3e1ff84
