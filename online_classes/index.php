@@ -37,7 +37,7 @@
                                         <!-- @foreach($online_classes as $online_classe) -->
 
                                         <?php 
-                                    $query = "SELECT * FROM students";
+                                    $query = "SELECT * FROM online_classes";
                                     $query_run = mysqli_query($con, $query);
 
                                     if(mysqli_num_rows($query_run) > 0)

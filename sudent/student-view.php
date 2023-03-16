@@ -1,13 +1,12 @@
 <?php
-require './dbcon.php';
+require '../dbcon.php';
 ?>
-\
-?>
-<?php include '/layouts/head.php';?>
+
+<?php include '../components/head.php';?>
 
 
 <body>
-<?php include '/layouts/header.php';?>
+<?php include '../components/header.php';?>
 
     <div class="container mt-5">
 
@@ -71,7 +70,7 @@ require './dbcon.php';
             </div>
         </div>
     </div>
-    <?php include '/layouts/footer.php';?>
+    <?php include '../components/footer.php';?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

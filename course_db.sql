@@ -12,29 +12,107 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
--- Database: `course_db`
+-- Table structure for table `Grades`
 --
 
+CREATE TABLE `Grades` (
+  `Grade_id` INT(6) AUTO_INCREMENT PRIMARY KEY,
+  `Grade_Notes` varchar(191) NOT NULL,
+  `Grade_Name` varchar(191) NOT NULL
+  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `grades`
+-- Table structure for table `classrooms`
 --
 CREATE TABLE `classrooms` (
-
-   Grade_id VARCHAR(191) NOT NULL,
+  `Class_id` INT(6) AUTO_INCREMENT ,
+  
     Name_Class VARCHAR(191) NOT NULL,
-    Name_Class VARCHAR(191) NOT NULL
+  `Grade_id` INT(6)  ,
+      PRIMARY KEY (Class_id),
+    FOREIGN KEY (Grade_id) REFERENCES Grades(Grade_id)
+
+) ;
+
+-- --------------------------------------------------------
+
+-- Table structure for table `sections`
+--
+CREATE TABLE `sections` (
+  `id_sections` INT(6) AUTO_INCREMENT PRIMARY KEY,
+  `sections` varchar(191) NOT NULL,
+  `Status` varchar(191) NOT NULL,
+  `title` varchar(191) NOT NULL,
+    `classroom_id` INT(6),
+     FOREIGN KEY (classroom_id) REFERENCES classrooms(classroom_id),
+  	`Grade_id` INT(6)  ,
+    FOREIGN KEY (Grade_id) REFERENCES Grades(Grade_id)
+   
+    
+  
+    
+    
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `specializations`
+--
+
+CREATE TABLE `specializations` (
+  `id_specialization` INT(6) AUTO_INCREMENT PRIMARY KEY,
+  `Name_specialization` varchar(191) NOT NULL
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teachers`
+--
+
+CREATE TABLE `teachers` (
+  `id_teacher` INT(6) AUTO_INCREMENT PRIMARY KEY,
+  `Email` varchar(20) NOT NULL,
+  `Password` varchar(20) NOT NULL,
+  `Name` varchar(20) NOT NULL,
+
+  `id_specialization`  INT(6) ,
+      FOREIGN KEY (id_specialization) REFERENCES specializations(id_specialization),
+  `id_sections` INT(6) ,
+    FOREIGN KEY (id_sections) REFERENCES sections(id_sections),
+  `Address` varchar(191) NOT NULL,
+  `Joining_Date` varchar(191) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+-- --------------------------------------------------------
+
+
+--
+
+-- Table structure for table `teacher_section`
+--
+
+CREATE TABLE `teacher_section` (
+  `id_teacher_section` INT(6) AUTO_INCREMENT PRIMARY KEY,
+  `id_teacher`  INT(6)  ,
+    FOREIGN KEY (id_teacher) REFERENCES teachers(id_teacher),
+ `id_sections` INT(6)  ,
+    FOREIGN KEY (id_sections) REFERENCES sections(id_sections)
+  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `students`
@@ -44,111 +122,62 @@ CREATE TABLE students (
     name VARCHAR(191) NOT NULL,
     email VARCHAR(191) NOT NULL,
     phone VARCHAR(191) NOT NULL,
-    course VARCHAR(191) NOT NULL
-)
--- --------------------------------------------------------
-
---
--- Table structure for table `grades`
---
-
-CREATE TABLE `grades` (
-  `id` varchar(20) NOT NULL,
-  `Notes` varchar(20) NOT NULL,
-  `Name` varchar(20) NOT NULL,
-  
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `online_classes`
---
-
-CREATE TABLE `online_classes` (
-  `id` varchar(50) NOT NULL,
-  `Grade_id` varchar(50) NOT NULL,
-  `duration` varchar(50) NOT NULL,
-  `user_id` int(10) NOT NULL,
-  `meeting_id` varchar(1000) NOT NULL,
-   `Classroom_id` varchar(50) NOT NULL,
-  `start_at` varchar(50) NOT NULL,
-  `topic` int(10) NOT NULL,
-  `section_id` varchar(1000) NOT NULL,
-  `password` varchar(1000) NOT NULL,
-  `start_url` varchar(1000) NOT NULL,
-  `join_url` varchar(1000) NOT NULL,
-  
-
-  
-
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sections`
---
-
-CREATE TABLE `sections` (
-  `id` varchar(20) NOT NULL,
-  `sections` varchar(20) NOT NULL,
-  `Status` varchar(20) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `Grade_id` varchar(1000) NOT NULL,
-  `Class_id` varchar(100) NOT NULL,
-  
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `teachers`
---
-
-CREATE TABLE `teachers` (
-  `id` varchar(20) NOT NULL,
-  `Email` varchar(20) NOT NULL,
-  `Password` varchar(20) NOT NULL,
-  `Name` varchar(20) NOT NULL,
-
-  `Specialization_id` varchar(20) NOT NULL,
-  `Gender_id` varchar(20) NOT NULL ,
-  `Address` varchar(20) NOT NULL,
-  `Joining_Date` varchar(20) NOT NULL,
-
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `teacher_section`
---
-
-CREATE TABLE `teacher_section` (
-  `id` varchar(20) NOT NULL,
-  `teacher_id` varchar(20) NOT NULL,
-  `section_id` varchar(100) NOT NULL
-  
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
-
-
+    course VARCHAR(191) NOT NULL,
+     `id_section` INT(6)  ,
+   `id_sections` INT(6) ,
+    FOREIGN KEY (id_sections) REFERENCES sections(id_sections),
+     `classroom_id` INT(6),
+     FOREIGN KEY (classroom_id) REFERENCES classrooms(classroom_id),
+  	`Grade_id` INT(6)  ,
+    FOREIGN KEY (Grade_id) REFERENCES Grades(Grade_id)
+   
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` varchar(20) NOT NULL,
+CREATE TABLE users (
+  `id-user` INT(6) AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-COMMIT;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `online_classes`
+--
+
+
+CREATE TABLE `online_classes` (
+  `id`INT(6) AUTO_INCREMENT PRIMARY KEY,
+
+  `duration` varchar(50) NOT NULL,
+  `user_id` int(10) NOT NULL,
+  `meeting_id` varchar(1000) NOT NULL,
+  
+  `start_at` varchar(50) NOT NULL,
+  `topic` int(10) NOT NULL,
+  
+  `password` varchar(1000) NOT NULL,
+  `start_url` varchar(1000) NOT NULL,
+  `join_url` varchar(1000) NOT NULL,
+   `id_sections` INT(6) ,
+    FOREIGN KEY (id_sections) REFERENCES sections(id_sections),
+     `classroom_id` INT(6),
+     FOREIGN KEY (classroom_id) REFERENCES classrooms(classroom_id),
+  	`Grade_id` INT(6)  ,
+    FOREIGN KEY (Grade_id) REFERENCES Grades(Grade_id)
+   
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

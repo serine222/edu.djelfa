@@ -1,11 +1,12 @@
 
 <?php include '/components/head.php';
 require './dbcon.php';
+ZoomApiHelper::createZoomMeeting();
+
 ?>
 
-
 <body>
-<?php include '/components/header.php';?>
+<?php include '../components/header.php';?>
 <!-- row -->
 <div class="row">
     <div class="col-md-12 mb-30">
@@ -109,7 +110,7 @@ require './dbcon.php';
     </div>
 </div>
 <!-- row closed -->
-<?php include '/components/footer.php';?>
+<?php include '../components/footer.php';?>
 
 
 
