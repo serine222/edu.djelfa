@@ -31,7 +31,7 @@ class ZoomApiHelper{
 			]
 		];
 
-		$zoomUserId = 'U3tpEUkeQA6uSHNAeykwXw';
+		$zoomUserId = '    ';
 
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); // Skip SSL Verification
