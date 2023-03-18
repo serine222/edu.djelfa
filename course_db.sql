@@ -35,6 +35,9 @@ CREATE TABLE `classrooms` (
     Name_Class VARCHAR(191) NOT NULL,
   `Grade_id` INT(6)  ,
       PRIMARY KEY (Class_id),
+    
+    --   CONSTRAINT FK_classroomsGrade FOREIGN KEY (Grade_id)
+    -- REFERENCES Grades(Grade_id)
     FOREIGN KEY (Grade_id) REFERENCES Grades(Grade_id)
 
 ) ;

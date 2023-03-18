@@ -1,6 +1,6 @@
 
-<?php include '/components/head.php';
-require './dbcon.php';
+<?php include '../components/head.php';
+require '../dbcon.php';
 ZoomApiHelper::createZoomMeeting();
 
 ?>

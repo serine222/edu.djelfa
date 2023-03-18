@@ -7,12 +7,15 @@
     <div id="menu" class="fas fa-bars"></div>
 
     <nav class="navbar">
-        <a href="home.php">home</a>
-        <a href="course.php">course</a>
-        <a href="teacher.php">teacher</a>
-        <a href="price.php">price</a>
-        <a href="review.php">review</a>
-        <a href="contact.php">contact</a>
+        <a href="index.php">home</a>
+        <a href="Grades">Grades</a>
+        <a href="classrooms">classrooms</a>
+        <a href="sections">sections</a>
+
+        <a href="teacher">teacher</a>
+        <a href="online_classes">online classes</a>
+        <a href="student">student</a>
+        
     </nav>
 
 </header>

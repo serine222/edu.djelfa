@@ -1,95 +1,96 @@
 <?php
 session_start();
-require './dbcon.php';
+require '../dbcon.php';
 
-if(isset($_POST['delete_online_classes']))
+if(isset($_POST['delete_online_classe']))
 {
-    $student_id = mysqli_real_escape_string($con, $_POST['delete_online_classes']);
+    $online_classe_id = mysqli_real_escape_string($con, $_POST['delete_online_classe']);
 
-    $query = "DELETE FROM students WHERE id='$online_classes_id' ";
+    $query = "DELETE FROM online_classes WHERE id='$online_classe_id' ";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
     {
-        $_SESSION['message'] = "online classes Deleted Successfully";
+        $_SESSION['message'] = "online_classe Deleted Successfully";
         header("Location: index.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "online classes Not Deleted";
+        $_SESSION['message'] = "online_classe Not Deleted";
         header("Location: index.php");
         exit(0);
     }
 }
 
-if(isset($_POST['update_online_classes']))
+if(isset($_POST['update_online_classe']))
 {
-    $online_classe_id = mysqli_real_escape_string($con, $_POST['online_classe_id']);
+    $online_classe_id = mysqli_real_escape_string($con, $_POST['id']);
 
-    $name = mysqli_real_escape_string($con, $_POST['name']);
-    $Grade_id = mysqli_real_escape_string($con, $_POST['Grade_id']);
     $duration = mysqli_real_escape_string($con, $_POST['duration']);
     $user_id = mysqli_real_escape_string($con, $_POST['user_id']);
     $meeting_id = mysqli_real_escape_string($con, $_POST['meeting_id']);
-    $Classroom_id = mysqli_real_escape_string($con, $_POST['Classroom_id']);
-    $section_id = mysqli_real_escape_string($con, $_POST['section_id']);
+    $start_at = mysqli_real_escape_string($con, $_POST['start_at']);
+    $topic = mysqli_real_escape_string($con, $_POST['topic']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $start_url = mysqli_real_escape_string($con, $_POST['start_url']);
     $join_url = mysqli_real_escape_string($con, $_POST['join_url']);
+    $id_sections = mysqli_real_escape_string($con, $_POST['id_sections']);
+    $classroom_id = mysqli_real_escape_string($con, $_POST['classroom_id']);
+    $Grade_id = mysqli_real_escape_string($con, $_POST['Grade_id']);
 
-    $query = "UPDATE online_classes SET name='$name', Grade_id='$Grade_id', duration='$duration', user_id='$user_id', meeting_id='$meeting_id', Classroom_id='$Classroom_id', course='$course',join_url='$join_url',start_url='$start_url,password='$password',section_id='$section_id'' WHERE id=' $online_classe_id' ";
+
+
+    $query = "UPDATE online_classes SET duration='$duration', user_id='$user_id', meeting_id='$meeting_id', start_at='$start_at',topic='$topic',password='$password',start_url='$start_url',join_url='$join_url',id_sections='$id_sections',classroom_id='$classroom_id',Grade_id='$Grade_id' WHERE id='$online_classe_id' ";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
     {
-        $_SESSION['message'] = "online classes Updated Successfully";
+        $_SESSION['message'] = "online_classe Updated Successfully";
         header("Location: index.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "online classes Not Updated";
+        $_SESSION['message'] = "online_classe Not Updated";
         header("Location: index.php");
         exit(0);
     }
 
 }
 
-  
 
-
-if(isset($_POST['save_online_classes']))
+if(isset($_POST['save_online_classe']))
 {
-    $name = mysqli_real_escape_string($con, $_POST['name']);
-    $Grade_id = mysqli_real_escape_string($con, $_POST['Grade_id']);
     $duration = mysqli_real_escape_string($con, $_POST['duration']);
     $user_id = mysqli_real_escape_string($con, $_POST['user_id']);
     $meeting_id = mysqli_real_escape_string($con, $_POST['meeting_id']);
-    $Classroom_id = mysqli_real_escape_string($con, $_POST['Classroom_id']);
-    $section_id = mysqli_real_escape_string($con, $_POST['section_id']);
+    $start_at = mysqli_real_escape_string($con, $_POST['start_at']);
+    $topic = mysqli_real_escape_string($con, $_POST['topic']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
     $start_url = mysqli_real_escape_string($con, $_POST['start_url']);
     $join_url = mysqli_real_escape_string($con, $_POST['join_url']);
+    $id_sections = mysqli_real_escape_string($con, $_POST['id_sections']);
+    $classroom_id = mysqli_real_escape_string($con, $_POST['classroom_id']);
+    $Grade_id = mysqli_real_escape_string($con, $_POST['Grade_id']);
 
-
-
-    $query = "INSERT INTO online_classes (name,Grade_id,duration,user_id,meeting_id,Classroom_id,section_id,password,start_url,join_url) VALUES ('$name','$Grade_id','$duration','$user_id','$meeting_id','$Classroom_id','$section_id','$password','$start_url','$join_url')";
+    $query = "INSERT INTO online_classes (duration,user_id,meeting_id,start_at,topic,password,start_url,id_sections,classroom_id,Grade_id) VALUES ('$duration','$user_id','$meeting_id','$start_at','$topic','$password',''$start_url,'$join_url','$id_sections','$classroom_id','$Grade_id')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run)
     {
-        $_SESSION['message'] = "Student Created Successfully";
-        header("Location: student-create.php");
+        $_SESSION['message'] = "online_classe Created Successfully";
+        header("Location: online_classe-create.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Student Not Created";
-        header("Location: student-create.php");
+        $_SESSION['message'] = "online_classe Not Created";
+        header("Location: online_classe-create.php");
         exit(0);
     }
 }
 
 
 ?>
+

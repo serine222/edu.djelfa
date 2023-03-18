@@ -15,7 +15,7 @@
     <div class="content">
         <h3>E-learning is a better way of learning</h3>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia repellat aperiam libero, beatae debitis iusto quia sit aliquid placeat facilis?</p>
-                                <a href="#" class="btn">get started</a>                     
+                                <a href="/online_classes" class="btn">get started</a>                     
 
     </div>
 

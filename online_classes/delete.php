@@ -1,18 +1,18 @@
 
-<?php include '/layouts/head.php';
-require './dbcon.php';
+<?php include '/components/head.php';
+require '../dbcon.php';
 ?>
 
 
 
 <body>
-<?php include './components/header.php';?>
+<?php include '../components/header.php';?>
 
 
 
 
 <!-- Deleted inFormation Student -->
-<div class="modal fade" id="Delete_receipt{{$online_classe->meeting_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Delete_receipt<?php $online_classe->meeting_id;?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -22,15 +22,14 @@ require './dbcon.php';
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('online_classes.destroy','test')}}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <input type="hidden" name="id" value="{{$online_classe->meeting_id}}">
+                <form action="code.php" method="post">
+                
+                    <input type="hidden" name="id" value="<?php $online_classe->meeting_id;?>">
                     <h5 style="font-family: 'Cairo', sans-serif;">هل انت متاكد مع عملية الحذف ؟</h5>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans('Students_trans.Close')}}</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" name="delete_online_classe" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
                                                     </form>
                     </div>
                 </form>
@@ -40,5 +39,5 @@ require './dbcon.php';
 </div>
 
 
-<?php include './components/footer.php';?>
+<?php include '../components/footer.php';?>
 
