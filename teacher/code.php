@@ -1,12 +1,12 @@
 <?php
 session_start();
-require './dbcon.php';
+require '../dbcon.php';
 
 if(isset($_POST['delete_teacher']))
 {
     $teacher_id = mysqli_real_escape_string($con, $_POST['delete_teacher']);
 
-    $query = "DELETE FROM teachers WHERE id='$teacher_id' ";
+    $query = "DELETE FROM teachers WHERE id_teacher='$teacher_id' ";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
@@ -25,14 +25,19 @@ if(isset($_POST['delete_teacher']))
 
 if(isset($_POST['update_teacher']))
 {
-    $teacher_id = mysqli_real_escape_string($con, $_POST['teacher_id']);
+    $teacher_id = mysqli_real_escape_string($con, $_POST['id_teacher']);
 
     $name = mysqli_real_escape_string($con, $_POST['name']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $phone = mysqli_real_escape_string($con, $_POST['phone']);
-    $course = mysqli_real_escape_string($con, $_POST['course']);
+    $email = mysqli_real_escape_string($con, $_POST['Email']);
+    $Joining_Date = mysqli_real_escape_string($con, $_POST['Joining_Date']);
+    $Address = mysqli_real_escape_string($con, $_POST['Address']);
+    $Password = mysqli_real_escape_string($con, $_POST['Password']);
+    // $id_specialization = mysqli_real_escape_string($con, $_POST['id_specialization']);
+    // $Grade_id = mysqli_real_escape_string($con, $_POST['Grade_id']);
+    // $classroom_id = mysqli_real_escape_string($con, $_POST['classroom_id']);
 
-    $query = "UPDATE teachers SET name='$name', email='$email', phone='$phone', course='$course' WHERE id='$teacher_id' ";
+    $query = "UPDATE teachers SET name='$name', Email='$email', Joining_Date='$Joining_Date', Address='$Address', Password='$Password' WHERE id_teacher='$teacher_id' ";
+    // , id_specialization='$id_specialization', Grade_id='$Grade_id', classroom_id='$classroom_id'
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
@@ -54,11 +59,18 @@ if(isset($_POST['update_teacher']))
 if(isset($_POST['save_teacher']))
 {
     $name = mysqli_real_escape_string($con, $_POST['name']);
-    $email = mysqli_real_escape_string($con, $_POST['email']);
-    $phone = mysqli_real_escape_string($con, $_POST['phone']);
-    $course = mysqli_real_escape_string($con, $_POST['course']);
+    $email = mysqli_real_escape_string($con, $_POST['Email']);
+    $Joining_Date = mysqli_real_escape_string($con, $_POST['Joining_Date']);
+    $Address = mysqli_real_escape_string($con, $_POST['Address']);
+    $Password = mysqli_real_escape_string($con, $_POST['Password']);
+    $id_specialization = mysqli_real_escape_string($con, $_POST['id_specialization']);
+   
+    $classroom_id = mysqli_real_escape_string($con, $_POST['classroom_id']);
 
-    $query = "INSERT INTO teachers (name,email,phone,course) VALUES ('$name','$email','$phone','$course')";
+
+
+
+    $query = "INSERT INTO teachers (name,Email,Joining_Date,Address,Password,id_specialization,classroom_id) VALUES ('$name','$email','$Joining_Date','$Address','$Password',' $id_specialization','$classroom_id')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run)

@@ -5,7 +5,7 @@
   <!--nav-bar-->
   <nav class="navbar navbar-expand-md sticky-top fixed-top shadow text-white">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="img/logo-sm.png" width="60" height="50" alt="الجلفة للدراسة"></a>
+      <a class="navbar-brand" href="#"><img src="./img/logo-sm.png" width="60" height="50" alt="الجلفة للدراسة"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa-solid fa-bars"></i>
       </button>

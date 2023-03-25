@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './dbcon.php';
+require '../dbcon.php';
 ?>
 <?php include '../components/head.php';?>
 
@@ -16,7 +16,7 @@ require './dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Edit 
+                        <h4>teacher Edit 
                             <a href="index.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
@@ -25,36 +25,40 @@ require './dbcon.php';
                         <?php
                         if(isset($_GET['id']))
                         {
-                            $student_id = mysqli_real_escape_string($con, $_GET['id']);
-                            $query = "SELECT * FROM students WHERE id='$student_id' ";
+                            $teacher_id = mysqli_real_escape_string($con, $_GET['id']);
+                            $query = "SELECT * FROM teachers WHERE id_teacher='$teacher_id' ";
                             $query_run = mysqli_query($con, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
                             {
-                                $student = mysqli_fetch_array($query_run);
+                                $teacher = mysqli_fetch_array($query_run);
                                 ?>
                                 <form action="code.php" method="POST">
-                                    <input type="hidden" name="student_id" value="<?= $student['id']; ?>">
+                                    <input type="hidden" name="id_teacher" value="<?= $teacher['id_teacher']; ?>">
 
                                     <div class="mb-3">
-                                        <label>Student Name</label>
-                                        <input type="text" name="name" value="<?=$student['name'];?>" class="form-control">
+                                        <label>teacher Name</label>
+                                        <input type="text" name="name" value="<?=$teacher['Name'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Email</label>
-                                        <input type="email" name="email" value="<?=$student['email'];?>" class="form-control">
+                                        <label>teacher Email</label>
+                                        <input type="email" name="Email" value="<?=$teacher['Email'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Phone</label>
-                                        <input type="text" name="phone" value="<?=$student['phone'];?>" class="form-control">
+                                        <label>teacher Password</label>
+                                        <input type="text" name="Password" value="<?=$teacher['Password'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Course</label>
-                                        <input type="text" name="course" value="<?=$student['course'];?>" class="form-control">
+                                        <label>teacher Address</label>
+                                        <input type="text" name="Address" value="<?=$teacher['Address'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <button type="submit" name="update_student" class="btn btn-primary">
-                                            Update Student
+                                        <label>teacher Joining_Date</label>
+                                        <input type="text" name="Joining_Date" value="<?=$teacher['Joining_Date'];?>" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <button type="submit" name="update_teacher" class="btn btn-primary">
+                                            Update teacher
                                         </button>
                                     </div>
 

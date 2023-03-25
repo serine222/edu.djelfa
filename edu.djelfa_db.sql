@@ -110,7 +110,7 @@ CREATE TABLE students (
     email VARCHAR(191) NOT NULL,
     phone VARCHAR(191) NOT NULL,
     course VARCHAR(191) NOT NULL,
-     `id_classroom` INT(6)  ,
+   
   
      `classroom_id` INT(6),
      FOREIGN KEY (classroom_id) REFERENCES classrooms(classroom_id),
@@ -140,26 +140,40 @@ CREATE TABLE users (
 
 CREATE TABLE `online_classes` (
   `id`INT(6) AUTO_INCREMENT PRIMARY KEY,
+ `meeting_id` varchar(1000) NOT NULL,
+`topic` int(10) NOT NULL,
+  `start_time` varchar(50) NOT NULL,
+`duration` varchar(50) NOT NULL,
+`password` varchar(1000) NOT NULL,
+`start_url` varchar(1000) NOT NULL,
+`join_url` varchar(1000) NOT NULL,
 
-  `duration` varchar(50) NOT NULL,
-  `user_id` int(10) NOT NULL,
-  `meeting_id` varchar(1000) NOT NULL,
   
-  `start_at` varchar(50) NOT NULL,
-  `topic` int(10) NOT NULL,
-  
-  `password` varchar(1000) NOT NULL,
-  `start_url` varchar(1000) NOT NULL,
-  `join_url` varchar(1000) NOT NULL,
-   
      `classroom_id` INT(6),
      FOREIGN KEY (classroom_id) REFERENCES classrooms(classroom_id),
   	`Grade_id` INT(6)  ,
-    FOREIGN KEY (Grade_id) REFERENCES Grades(Grade_id)
+    FOREIGN KEY (Grade_id) REFERENCES Grades(Grade_id),
+    `id_teacher` INT(6)  ,
+    FOREIGN KEY (id_teacher) REFERENCES teachers(id_teacher)
    
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
+INSERT INTO specializations
+VALUES ('1','ادب');
 
+INSERT INTO specializations
+VALUES ('3','علوم');
 
+INSERT INTO specializations
+VALUES ('4','رياضيات');
+
+INSERT INTO specializations
+VALUES ('5','اعلام الي');
+
+INSERT INTO specializations
+VALUES ('6','شريعة');
+
+INSERT INTO specializations
+VALUES ('7','فيزياء');

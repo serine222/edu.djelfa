@@ -28,11 +28,12 @@ require '../dbcon.php';
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>teacher Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Course</th>
-                                    <th>Action</th>
+                                    <th>اسم الاستاذ</th>
+                                    <th>بريد الالكتروني</th>
+                                    <th>الموقع السكن</th>
+                                    <th>تاريخ البدا العمل</th>
+                                    <th>العمليات</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -46,16 +47,18 @@ require '../dbcon.php';
                                         {
                                             ?>
                                             <tr>
-                                                <td><?= $teacher['id']; ?></td>
-                                                <td><?= $teacher['name']; ?></td>
-                                                <td><?= $teacher['email']; ?></td>
-                                                <td><?= $teacher['phone']; ?></td>
-                                                <td><?= $teacher['course']; ?></td>
+                                                <td><?= $teacher['id_teacher']; ?></td>
+                                                <td><?= $teacher['Name']; ?></td>
+                                                <td><?= $teacher['Email']; ?></td>
+                                                <td><?= $teacher['Address']; ?></td>
+                                                <td><?= $teacher['Joining_Date']; ?></td>
                                                 <td>
-                                                    <a href="teacher-view.php?id=<?= $teacher['id']; ?>" class="btn btn-info btn-sm">View</a>
-                                                    <a href="teacher-edit.php?id=<?= $teacher['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                
+                                                  
+                                                <a href="teacher-view.php?id=<?= $teacher['id_teacher']; ?>" class="btn btn-info btn-sm">View</a>
+                                                    <a href="teacher-edit.php?id=<?= $teacher['id_teacher']; ?>" class="btn btn-success btn-sm">Edit</a>
                                                     <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_teacher" value="<?=$teacher['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" name="delete_teacher" value="<?= $teacher['id_teacher']; ?>" class="btn btn-danger btn-sm">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>

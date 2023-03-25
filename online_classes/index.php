@@ -9,18 +9,6 @@ include '../components/header.php';
   
     
 
-    <div class="online-corses">
-    <div class="row">
-      <div class="content col-md-6 text-center">
-        <h1>حصص اونلاين <br><span>عبر الزوم zoom</span></h1>
-        <h4></h4>
-        <button class="btn">عرض الحصص</button>
-      </div>
-      <div class="image col-md-6">
-        <img src="img/Online learning-amico (2).svg" alt="">
-      </div>
-    </div>
-  </div>
 
 
 
@@ -32,12 +20,12 @@ include '../components/header.php';
       <h4 class="title text-center">حصص اونلاين</h4>
        <div class="filter">
       
-  <div class="card card-no-hover text-center no-shadow border-green">
+  <!-- <div class="card card-no-hover text-center no-shadow border-green">
     <div class="card-body shadow">
-        <label class="bold" for="type">المرحلة :</label><!--dropup-->
+        <label class="bold" for="type">المرحلة :</label>
         <select class="dropdown bootstrap-select  p-1" style="width: 10%;">
         <div class="card-body shadow">
-        <label class="bold" for="type">المرحلة :</label><!--dropup-->
+        <label class="bold" for="type">المرحلة :</label><
         <select class="dropdown bootstrap-select  p-1" style="width: 10%;">
           <option value="all" selected>الكل</option>
           <option value="1">ابتدائي</option>
@@ -72,10 +60,10 @@ include '../components/header.php';
       <label class="name" for="type">الاستاذ :</label>
       <input type="text" name="name" id="" placeholder="اسم الاستاذ" style="height: 40px;";>
       </div>
-  </div>
+  </div> -->
   <div class="t-table justify-content-between">
      <h6 class="title2">الحصص المبرمجة مع التفاصيل</h6> 
-     <a href="zoom-class.html"> <button class="btn" id="#btn"><i class="fa-solid fa-plus"></i>اضافة حصة جديدة</button></a>
+     <a href="add.php"> <button class="btn" id="#btn"><i class="fa-solid fa-plus"></i>اضافة حصة جديدة</button></a>
   </div>
   <table class="table table-hover shadow text-center">
       <thead>
@@ -85,7 +73,7 @@ include '../components/header.php';
         <th scope="col">#</th>
         <th  scope="col">المرحلة</th>
         <th scope="col">الصف</th>
-        <th scope="col">القسم</th>
+
         <th scope="col">المعلم</th>
         <th scope="col">عنوان الحصة</th>
         <th scope="col">تاريخ البداية</th>
@@ -96,7 +84,7 @@ include '../components/header.php';
     </thead>
     <tbody>
       
-      <tr>
+      <!-- <tr>
           <td>ابتدائي</td>
           <td>خامسة</td>
           <td>رياضيات</td>
@@ -105,7 +93,7 @@ include '../components/header.php';
           <td>2023/03/14</td>
           <td>17:30</td>
           <td><button class="btn">انظم الان</button></td>
-      </tr>
+      </tr> -->
 
          <!-- @foreach($online_classes as $online_classe) -->
 
@@ -119,15 +107,25 @@ include '../components/header.php';
                                         {
                                             ?>
                                             <tr>
-                                            <td><?= $loop->iteration ; ?></td>
                                            
-                                                <td><?=$online_classe->user->name; ?></td>
-                                                <td><?=$online_classe->topic; ?></td>
-                                                <td><?=$online_classe->start_at; ?></td>
-                                                <td><?=$online_classe->duration; ?></td>
-                                                <td class="text-danger"><a href="{<?=$online_classe->join_url; ?>" target="_blank">انضم الان</a></td>
+                                            <td><?=$online_classe['id']; ?></td>
+                                                <td><?=$online_classe['Grade_id']; ?></td>
+                                                <td><?=$online_classe['classroom_id']; ?></td>
+                                                <td><?=$online_classe['id_teacher']; ?></td>
+                                              
+                                                <td><?=$online_classe['topic']; ?></td>
+                                                <td><?=$online_classe['start_time']; ?></td>
+                                                <td><?=$online_classe['duration']; ?></td>
+                                               
+                                               
+
+                                              
+                                                <td class="text-danger"><a href="{<?=$online_classe['join_url']; ?>}" target="_blank">انضم الان</a></td>
+
                                                 <td>
-                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#Delete_receipt{{<?=$online_classe->meeting_id; ?>" ><i class="fa fa-trash"></i></button>
+                                                <form action="code.php" method="POST" class="d-inline">
+                                                        <button type="submit" name="delete_online_classe" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                             <?php
@@ -139,7 +137,7 @@ include '../components/header.php';
                                             }
                                         ?>
 
-                                        <?php include 'delete';?>
+                                      
       
     </tbody>
   </table>

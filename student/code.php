@@ -1,6 +1,6 @@
 <?php
 session_start();
-require './dbcon.php';
+require '../dbcon.php';
 
 if(isset($_POST['delete_student']))
 {
@@ -57,8 +57,13 @@ if(isset($_POST['save_student']))
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $phone = mysqli_real_escape_string($con, $_POST['phone']);
     $course = mysqli_real_escape_string($con, $_POST['course']);
+    $Grade_id = mysqli_real_escape_string($con, $_POST['Grade_id']);
 
-    $query = "INSERT INTO students (name,email,phone,course) VALUES ('$name','$email','$phone','$course')";
+    $class_id = mysqli_real_escape_string($con, $_POST['classroom_id']);
+
+
+
+    $query = "INSERT INTO students (name,email,phone,course,Grade_id,classroom_id) VALUES ('$name','$email','$phone','$course','$Grade_id','$class_id')";
 
     $query_run = mysqli_query($con, $query);
     if($query_run)
