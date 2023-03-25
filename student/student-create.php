@@ -39,9 +39,79 @@ session_start();
                                 <label>Student Course</label>
                                 <input type="text" name="course" class="form-control">
                             </div>
+                       
+
+                            <div class="mb-3">
+                                <label for="Name_en"
+                                class="mr-sm-2">Name Grade
+                                :</label>
+
+                            <div class="mb-3">
+                                <select class="fancyselect" name="id-Grade">
+                                    
+                                <?php 
+                                    $query = "SELECT * FROM grades";
+                                    $query_run = mysqli_query($con, $query);
+
+                                    if(mysqli_num_rows($query_run) > 0)
+                                    {
+                                        foreach($query_run as $Grade)
+                                        {
+                                            ?>
+                                <option value='<?= $Grade['Grade_id']; ?>'><?= $Grade['Grade_Name']; ?> </option>
+
+                                <?php      }
+                                    }
+                                    else
+                                    {
+                                        echo "<h5> No Record Found </h5>";
+                                    }
+                                ?>
+
+                                </select>
+                            </div>
+                        
+
+                            <div class="mb-3">
+                                <label for="Name_en"
+                                class="mr-sm-2">Name class
+                                :</label>
+
+                            <div class="mb-3">
+                                <select class="fancyselect" name="id-class">
+                                    
+                                <?php 
+                                    $query = "SELECT * FROM classrooms";
+                                    $query_run = mysqli_query($con, $query);
+
+                                    if(mysqli_num_rows($query_run) > 0)
+                                    {
+                                        foreach($query_run as $class)
+                                        {
+                                            ?>
+                                <option value='<?= $class['classroom_id']; ?>'><?= $class['Name_Class']; ?> </option>
+
+                                <?php      }
+                                    }
+                                    else
+                                    {
+                                        echo "<h5> No Record Found </h5>";
+                                    }
+                                ?>
+
+                                </select>
+                            </div>
+                        
+
+
+
+
+
+
                             <div class="mb-3">
                                 <button type="submit" name="save_student" class="btn btn-primary">Save Student</button>
                             </div>
+           
 
                         </form>
                     </div>

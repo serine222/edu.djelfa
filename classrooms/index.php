@@ -44,15 +44,15 @@ require '../dbcon.php';
                                         {
                                             ?>
                                             <tr>
-                                                <td><?= $class['Class_id']; ?></td>
+                                                <td><?= $class['classroom_id']; ?></td>
                                                 <td><?= $class['Name_Class']; ?></td>
-                                                <td><?= $class['email']; ?></td>
+                                                <td><?= $class['Grade_id']; ?></td>
                                               
                                                 <td>
-                                                    <a href="class-view.php?Class_id=<?= $class['Class_id']; ?>" class="btn btn-info btn-sm">View</a>
-                                                    <a href="class-edit.php?Class_id=<?= $class['Class_id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="class-view.php?classroom_id=<?= $class['classroom_id']; ?>" class="btn btn-info btn-sm">View</a>
+                                                    <a href="class-edit.php?classroom_id=<?= $class['classroom_id']; ?>" class="btn btn-success btn-sm">Edit</a>
                                                     <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_class" value="<?=$class['Class_id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" name="delete_class" value="<?=$class['classroom_id'];?>" class="btn btn-danger btn-sm">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>

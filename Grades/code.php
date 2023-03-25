@@ -52,6 +52,8 @@ if(isset($_POST['update_Grade']))
 
 if(isset($_POST['save_Grade']))
 {
+   
+
     $Grade_Name = mysqli_real_escape_string($con, $_POST['Grade_Name']);
     $Grade_Notes = mysqli_real_escape_string($con, $_POST['Grade_Notes']);
    

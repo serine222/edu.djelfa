@@ -36,7 +36,7 @@ require '../dbcon.php';
                                 :</label>
 
                             <div class="mb-3">
-                                <select class="fancyselect" name="Grade_id">
+                                <select class="fancyselect" name="id-Grade">
                                     
                                 <?php 
                                     $query = "SELECT * FROM grades";
@@ -47,7 +47,7 @@ require '../dbcon.php';
                                         foreach($query_run as $Grade)
                                         {
                                             ?>
-                                <option value="<?= $Grade['Gerad_id']; ?>"> <?= $Grade['Grade_Name']; ?></option>
+                                <option value='<?= $Grade['Grade_id']; ?>'><?= $Grade['Grade_Name']; ?> </option>
 
                                 <?php      }
                                     }

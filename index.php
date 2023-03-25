@@ -1,32 +1,28 @@
 
-<?php include 'components/head.php';?>
+<?php include 'components/head 2.php';?>
 
 
 <body>
 <?php include 'components/header.php';?>
 
 
-
-
 <!-- home section  -->
+  
 
-<section class="home">
-
-    <div class="content">
-        <h3>E-learning is a better way of learning</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia repellat aperiam libero, beatae debitis iusto quia sit aliquid placeat facilis?</p>
-                                <a href="/online_classes" class="btn">get started</a>                     
-
+  <div class="online-corses">
+    <div class="row">
+      <div class="content col-md-6 text-center">
+        <h1>حصص اونلاين <br><span>عبر الزوم zoom</span></h1>
+        <h4></h4>
+        <button class="btn">عرض الحصص</button>
+      </div>
+      <div class="image col-md-6">
+        <img src="img/Online learning-amico (2).svg" alt="">
+      </div>
     </div>
-
-    <div class="image">
-        <img src="images/home-img.svg" alt="">
-    </div>
-
-</section>
+  </div>
 
 
-<!-- footer section  -->
 
 
 

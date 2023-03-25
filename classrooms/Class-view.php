@@ -21,28 +21,28 @@ require '../dbcon.php';
                     <div class="card-body">
 
                         <?php
-                        if(isset($_GET['id']))
+                        if(isset($_GET['classroom_id']))
                         {
-                            $student_id = mysqli_real_escape_string($con, $_GET['id']);
-                            $query = "SELECT * FROM students WHERE Class_id='$Class_id' ";
+                            $classrooms_id = mysqli_real_escape_string($con, $_GET['classroom_id']);
+                            $query = "SELECT * FROM classrooms WHERE classroom_id='$classrooms_id' ";
                             $query_run = mysqli_query($con, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
                             {
-                                $student = mysqli_fetch_array($query_run);
+                                $classrooms = mysqli_fetch_array($query_run);
                                 ?>
                                 
                                     <div class="mb-3">
-                                        <label>Student Name</label>
+                                        <label>classrooms Name</label>
                                         <p class="form-control">
-                                            <?=$student['name'];?>
+                                            <?=$classrooms['Name_Class'];?>
                                         </p>
                                     </div>
                                     
                                     <div class="mb-3">
-                                        <label>Student Email</label>
+                                        <label>classrooms Email</label>
                                         <p class="form-control">
-                                            <?=$student['email'];?>
+                                            <?=$classrooms['Grade_id'];?>
                                         </p>
                                     </div>
                                     
@@ -63,6 +63,6 @@ require '../dbcon.php';
     <?php include '../components/footer.php';?>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
 </body>
 </html>
