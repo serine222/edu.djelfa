@@ -5,7 +5,7 @@
   <!--nav-bar-->
   <nav class="navbar navbar-expand-md sticky-top fixed-top shadow text-white">
     <div class="container">
-      <a class="navbar-brand" href="/edu.djelfa"><img src="../img/logo-sm.png" width="60" height="50" alt="الجلفة للدراسة"></a>
+      <a class="navbar-brand" href="/edu.djelfa"><img src="./img/logo-sm.png" width="60" height="50" alt="الجلفة للدراسة"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa-solid fa-bars"></i>
       </button>
@@ -31,7 +31,8 @@
             </li>
             <li class="nav-item m-2">
                 <a class="nav-link" href="/edu.djelfa/Grades"> المراحل </a>
-            </li>   
+            </li>  
+           
             <!-- <li class="nav-item m-2">
                 <a class="nav-link" href="#"><i class="fa-solid fa-user-plus"></i>تسجيل الدخول</a>
             </li>  

@@ -109,10 +109,70 @@ include '../components/header.php';
                                             <tr>
                                            
                                             <td><?=$online_classe['id']; ?></td>
-                                                <td><?=$online_classe['Grade_id']; ?></td>
-                                                <td><?=$online_classe['classroom_id']; ?></td>
-                                                <td><?=$online_classe['id_teacher']; ?></td>
-                                              
+                                            <?php
+                                                $Grade_id = $online_classe['Grade_id'];
+                                                $query = "SELECT * FROM Grades WHERE Grade_id='$Grade_id' ";
+                                               $query_run = mysqli_query($con, $query);
+                                               if(mysqli_num_rows($query_run) > 0)
+                                                    {
+                                                        $Grade = mysqli_fetch_array($query_run);
+                                                        ?>
+
+
+
+
+                                                <td><?=$Grade['Grade_Name']; ?></td>
+
+                                                <?php
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "<h4>No Such Id Found</h4>";
+                                                    }
+                                                
+                                                ?>
+
+
+                                                <?php
+                                                $classroom_id = $online_classe['classroom_id'];
+                                                $query = "SELECT * FROM classrooms WHERE classroom_id='$classroom_id' ";
+                                               $query_run = mysqli_query($con, $query);
+                                               if(mysqli_num_rows($query_run) > 0)
+                                                    {
+                                                        $classroom = mysqli_fetch_array($query_run);
+                                                        ?>
+                                                <td><?=$classroom['Name_Class']; ?></td>
+                                                <?php
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "<h4>No Such Id Found</h4>";
+                                                    }
+                                                
+                                                ?>
+
+
+
+                                                <?php
+                                                $id_teacher = $online_classe['id_teacher'];
+                                                $query = "SELECT * FROM teachers WHERE id_teacher='$id_teacher' ";
+                                               $query_run = mysqli_query($con, $query);
+                                               if(mysqli_num_rows($query_run) > 0)
+                                                    {
+                                                        $teacher = mysqli_fetch_array($query_run);
+                                                        ?>
+                                                                        
+                                                                        <td><?=$teacher['Name']; ?></td>
+
+                                                                        <?php
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "<h4>No Such Id Found</h4>";
+                                                    }
+                                                
+                                                ?>
+                                                                      
                                                 <td><?=$online_classe['topic']; ?></td>
                                                 <td><?=$online_classe['start_time']; ?></td>
                                                 <td><?=$online_classe['duration']; ?></td>
@@ -123,8 +183,12 @@ include '../components/header.php';
                                                 <td class="text-danger"><a href="{<?=$online_classe['join_url']; ?>}" target="_blank">انضم الان</a></td>
 
                                                 <td>
-                                                <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_online_classe" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                
+                                                  
+                                                
+                                                    
+                                                    <form action="code.php" method="POST" class="d-inline">
+                                                        <button type="submit" name="delete_online_classe" value="<?= $online_classe['id']; ?>" class="btn btn-danger btn-sm">حذف</button>
                                                     </form>
                                                 </td>
                                             </tr>

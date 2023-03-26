@@ -3,7 +3,7 @@
 
 
 <body>
-<?php include 'components/header.php';?>
+<?php include 'components/header 2.php';?>
 
 
 <!-- home section  -->
@@ -14,7 +14,7 @@
       <div class="content col-md-6 text-center">
         <h1>حصص اونلاين <br><span>عبر الزوم zoom</span></h1>
         <h4></h4>
-        <button class="btn">عرض الحصص</button>
+        <a href="/edu.djelfa/online_classes"> <button class="btn">عرض الحصص</button></a>
       </div>
       <div class="image col-md-6">
         <img src="img/Online learning-amico (2).svg" alt="">

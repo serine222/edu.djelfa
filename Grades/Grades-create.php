@@ -24,16 +24,16 @@ session_start();
                         <form action="code.php" method="POST">
 
                             <div class="mb-3">
-                                <label>Grade Name</label>
+                                <label>اسم المستوى</label>
                                 <input type="text" name="Grade_Name" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label>Notes</label>
+                                <label>الملاحظة</label>
                                 <input type="text" name="Grade_Notes" class="form-control">
                             </div>
                             
                             <div class="mb-3">
-                                <button type="submit" name="save_Grade" class="btn btn-primary">Save Grade</button>
+                                <button type="submit" name="save_Grade" class="btn btn-primary">حفظ</button>
                             </div>
 
                         </form>

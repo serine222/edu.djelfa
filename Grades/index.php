@@ -18,8 +18,8 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Grade Details
-                            <a href="Grades-create.php" class="btn btn-primary float-end">Add Grades</a>
+                        <h4>المستوى
+                            <a href="Grades-create.php" class="btn btn-primary float-end">اضافة مرحلة</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -28,8 +28,10 @@ require '../dbcon.php';
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Grade Name</th>
-                                    <th>Grade Note</th>
+                                    <th>اسم المستوى</th>
+                                    <th>الملاحظة</th>
+                                    <th>العمليات</th>
+
                                     
                                 </tr>
                             </thead>
@@ -49,10 +51,10 @@ require '../dbcon.php';
                                                 <td><?= $Grade['Grade_Notes']; ?></td>
                                                 
                                                 <td>
-                                                    <a href="Grades-view.php?id=<?= $Grade['Grade_id']; ?>" class="btn btn-info btn-sm">View</a>
-                                                    <a href="Grades-edit.php?id=<?= $Grade['Grade_id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="Grades-view.php?id=<?= $Grade['Grade_id']; ?>" class="btn btn-info btn-sm">تفصيل</a>
+                                                    <a href="Grades-edit.php?id=<?= $Grade['Grade_id']; ?>" class="btn btn-success btn-sm">تعديل</a>
                                                     <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_Grade" value="<?=$Grade['Grade_id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" name="delete_Grade" value="<?=$Grade['Grade_id'];?>" class="btn btn-danger btn-sm">حذف</button>
                                                     </form>
                                                 </td>
                                             </tr>

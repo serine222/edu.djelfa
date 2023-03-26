@@ -14,7 +14,7 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Class View Details 
+                        <h4>المستوى 
                             <a href="index.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
@@ -33,14 +33,14 @@ require '../dbcon.php';
                                 ?>
                                 
                                     <div class="mb-3">
-                                        <label>classrooms Name</label>
+                                        <label>اسم المستوى</label>
                                         <p class="form-control">
                                             <?=$classrooms['Name_Class'];?>
                                         </p>
                                     </div>
                                     
                                     <div class="mb-3">
-                                        <label>classrooms Email</label>
+                                        <label>اسم المرحلة</label>
                                         <p class="form-control">
                                             <?=$classrooms['Grade_id'];?>
                                         </p>

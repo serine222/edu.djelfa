@@ -14,7 +14,7 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student View Details 
+                        <h4>طالب 
                             <a href="index.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
@@ -33,25 +33,25 @@ require '../dbcon.php';
                                 ?>
                                 
                                     <div class="mb-3">
-                                        <label>Student Name</label>
+                                        <label>اسم الطالب</label>
                                         <p class="form-control">
                                             <?=$student['name'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Email</label>
+                                        <label>بريد الكتروني</label>
                                         <p class="form-control">
                                             <?=$student['email'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Phone</label>
+                                        <label>هاتف</label>
                                         <p class="form-control">
                                             <?=$student['phone'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Course</label>
+                                        <label>دروس</label>
                                         <p class="form-control">
                                             <?=$student['course'];?>
                                         </p>

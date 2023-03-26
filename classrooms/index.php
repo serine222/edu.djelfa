@@ -18,8 +18,8 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>classrooms Details
-                            <a href="class-create.php" class="btn btn-primary float-end">Add classs</a>
+                        <h4> المستوى
+                            <a href="class-create.php" class="btn btn-primary float-end">اضافة مستوى </a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -28,8 +28,10 @@ require '../dbcon.php';
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>classrooms Name</th>
-                                    <th>Grade Name</th>
+                                    <th>اسم المستوي   </th>
+                                    <th>اسم المرحلة</th>
+                                    <th>العمليات</th>
+
                                     
                                 </tr>
                             </thead>
@@ -46,13 +48,32 @@ require '../dbcon.php';
                                             <tr>
                                                 <td><?= $class['classroom_id']; ?></td>
                                                 <td><?= $class['Name_Class']; ?></td>
-                                                <td><?= $class['Grade_id']; ?></td>
+                                                <?php
+                                                $Grade_id = $class['Grade_id'];
+                                                $query = "SELECT * FROM Grades WHERE Grade_id='$Grade_id' ";
+                                               $query_run = mysqli_query($con, $query);
+                                               if(mysqli_num_rows($query_run) > 0)
+                                                    {
+                                                        $Grade = mysqli_fetch_array($query_run);
+                                                        ?>
+
+
+                                                <td><?=$Grade['Grade_Name']; ?></td>
+
+                                                <?php
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "<h4>No Such Id Found</h4>";
+                                                    }
+
+                                                ?>
                                               
                                                 <td>
-                                                    <a href="class-view.php?classroom_id=<?= $class['classroom_id']; ?>" class="btn btn-info btn-sm">View</a>
-                                                    <a href="class-edit.php?classroom_id=<?= $class['classroom_id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="class-view.php?classroom_id=<?= $class['classroom_id']; ?>" class="btn btn-info btn-sm">تفاصيل</a>
+                                                    <a href="class-edit.php?classroom_id=<?= $class['classroom_id']; ?>" class="btn btn-success btn-sm">تعديل</a>
                                                     <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_class" value="<?=$class['classroom_id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" name="delete_class" value="<?=$class['classroom_id'];?>" class="btn btn-danger btn-sm">حذف</button>
                                                     </form>
                                                 </td>
                                             </tr>

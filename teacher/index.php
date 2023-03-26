@@ -18,8 +18,8 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>teacher Details
-                            <a href="teacher-create.php" class="btn btn-primary float-end">Add teachers</a>
+                        <h4>الاساتذة
+                            <a href="teacher-create.php" class="btn btn-primary float-end">اضافة استاذ جديد</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -55,10 +55,10 @@ require '../dbcon.php';
                                                 <td>
                                                 
                                                   
-                                                <a href="teacher-view.php?id=<?= $teacher['id_teacher']; ?>" class="btn btn-info btn-sm">View</a>
-                                                    <a href="teacher-edit.php?id=<?= $teacher['id_teacher']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                <a href="teacher-view.php?id=<?= $teacher['id_teacher']; ?>" class="btn btn-info btn-sm">تفاصيل</a>
+                                                    <a href="teacher-edit.php?id=<?= $teacher['id_teacher']; ?>" class="btn btn-success btn-sm">تعديل</a>
                                                     <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_teacher" value="<?= $teacher['id_teacher']; ?>" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" name="delete_teacher" value="<?= $teacher['id_teacher']; ?>" class="btn btn-danger btn-sm">حذف</button>
                                                     </form>
                                                 </td>
                                             </tr>

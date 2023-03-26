@@ -37,24 +37,24 @@ require '../dbcon.php';
                                     <input type="hidden" name="student_id" value="<?= $student['id']; ?>">
 
                                     <div class="mb-3">
-                                        <label>Student Name</label>
+                                        <label>اسم الطالب</label>
                                         <input type="text" name="name" value="<?=$student['name'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Email</label>
+                                        <label>بريد لاالكتروني</label>
                                         <input type="email" name="email" value="<?=$student['email'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Phone</label>
+                                        <label>هاتف</label>
                                         <input type="text" name="phone" value="<?=$student['phone'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>Student Course</label>
+                                        <label>دروس</label>
                                         <input type="text" name="course" value="<?=$student['course'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <button type="submit" name="update_student" class="btn btn-primary">
-                                            Update Student
+                                            تعديل
                                         </button>
                                     </div>
 

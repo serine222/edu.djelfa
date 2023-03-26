@@ -37,17 +37,17 @@ require '../dbcon.php';
                                     <input type="hidden" name="classroom_id" value="<?= $classrooms['classroom_id']; ?>">
 
                                     <div class="mb-3">
-                                        <label>class Name</label>
+                                        <label>اسم المستوى</label>
                                         <input type="text" name="Name_Class" value="<?=$classrooms['Name_Class'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>Grade</label>
+                                        <label>اسم المرحلة</label>
                                         <input type="text" name="Grade_id" value="<?=$classrooms['Grade_id'];?>" class="form-control">
                                     </div>
   
                                     <div class="mb-3">
                                         <button type="submit" name="update_class" class="btn btn-primary">
-                                            Update class
+                                           تعديل المستوى
                                         </button>
                                     </div>
 

@@ -33,13 +33,13 @@ require '../dbcon.php';
                                 ?>
                                 
                                     <div class="mb-3">
-                                        <label>Grade Name</label>
+                                        <label>اسم المستوى</label>
                                         <p class="form-control">
                                             <?=$Grade['Grade_Name'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>Note</label>
+                                        <label>الملاحظة</label>
                                         <p class="form-control">
                                             <?=$Grade['Grade_Notes'];?>
                                         </p>

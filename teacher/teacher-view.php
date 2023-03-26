@@ -14,8 +14,8 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>teacher View Details 
-                            <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                        <h4>الاستاذ 
+                            <a href="index.php" class="btn btn-danger float-end">خلف</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -33,25 +33,25 @@ require '../dbcon.php';
                                 ?>
                                 
                                     <div class="mb-3">
-                                        <label>teacher Name</label>
+                                        <label>اسم الاستاذ</label>
                                         <p class="form-control">
                                             <?=$teacher['Name'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>teacher Email</label>
+                                        <label>بريد الالكتروني</label>
                                         <p class="form-control">
                                             <?=$teacher['Email'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>teacher Address</label>
+                                        <label>موقع</label>
                                         <p class="form-control">
                                             <?=$teacher['Address'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>teacher Joining_Date</label>
+                                        <label>تاريخ انضمام المعلم</label>
                                         <p class="form-control">
                                             <?=$teacher['Joining_Date'];?>
                                         </p>

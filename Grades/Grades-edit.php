@@ -16,7 +16,7 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Grade Edit 
+                        <h4>تعديل 
                             <a href="index.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
@@ -38,11 +38,11 @@ require '../dbcon.php';
 
                                     
                                     <div class="mb-3">
-                                        <label>Grade Name</label>
+                                        <label>اسم المستوى</label>
                                         <input type="email" name="Grade_Name" value="<?=$Grade['Grade_Name'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                     <label>Grade Name</label>
+                                     <label>ملاحظة</label>
                                         <input type="text" name="Grade_Notes" value="<?=$Grade['Grade_Notes'];?>" class="form-control">
                                     </div>
 

@@ -17,8 +17,8 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>class Add 
-                            <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                        <h4>اضافة مستوى دراسي
+                            <a href="index.php" class="btn btn-danger float-end">خلف</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -26,13 +26,13 @@ require '../dbcon.php';
                         <form action="code.php" method="POST">
            
                             <div class="mb-3">
-                                <label>Class Name</label>
+                                <label>اسم المستوى</label>
                                 <input type="text" name="Name_Class" class="form-control">
                             </div>
 
                                 <div class="mb-3">
                                 <label for="Name_en"
-                                class="mr-sm-2">Name Grade
+                                class="mr-sm-2">اسم المرحلة الدراسية
                                 :</label>
 
                             <div class="mb-3">
@@ -61,7 +61,7 @@ require '../dbcon.php';
                             </div>
 
                             <div class="mb-3">
-                                <button type="submit" name="save_class" class="btn btn-primary">save class</button>
+                                <button type="submit" name="save_class" class="btn btn-primary">حفظ المستوى</button>
                             </div>
 
                         </form>

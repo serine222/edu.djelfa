@@ -18,8 +18,8 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Details
-                            <a href="student-create.php" class="btn btn-primary float-end">Add Students</a>
+                        <h4>طالب 
+                            <a href="student-create.php" class="btn btn-primary float-end">اضافة طالب </a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -28,11 +28,11 @@ require '../dbcon.php';
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Student Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Course</th>
-                                    <th>Action</th>
+                                    <th>اسم الطالب</th>
+                                    <th>بريد الالكتروني</th>
+                                    <th>الهاتف</th>
+                                    <th>الدروس</th>
+                                    <th>العمليات</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -52,10 +52,10 @@ require '../dbcon.php';
                                                 <td><?= $student['phone']; ?></td>
                                                 <td><?= $student['course']; ?></td>
                                                 <td>
-                                                    <a href="student-view.php?id=<?= $student['id']; ?>" class="btn btn-info btn-sm">View</a>
-                                                    <a href="student-edit.php?id=<?= $student['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <a href="student-view.php?id=<?= $student['id']; ?>" class="btn btn-info btn-sm">تفاصيل</a>
+                                                    <a href="student-edit.php?id=<?= $student['id']; ?>" class="btn btn-success btn-sm">تعديل</a>
                                                     <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                        <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">حذف</button>
                                                     </form>
                                                 </td>
                                             </tr>

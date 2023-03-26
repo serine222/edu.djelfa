@@ -17,7 +17,7 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Add 
+                        <h4>اضافة الطالب 
                             <a href="index.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
@@ -25,26 +25,26 @@ require '../dbcon.php';
                         <form action="code.php" method="POST">
 
                             <div class="mb-3">
-                                <label>Student Name</label>
+                                <label>اسم الطالب</label>
                                 <input type="text" name="name" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label>Student Email</label>
+                                <label>بريد الالكتروني</label>
                                 <input type="email" name="email" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label>Student Phone</label>
+                                <label>هاتف الطالب</label>
                                 <input type="text" name="phone" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label>Student Course</label>
+                                <label>دروس</label>
                                 <input type="text" name="course" class="form-control">
                             </div>
                        
 
                             <div class="mb-3">
                                 <label for="Name_en"
-                                class="mr-sm-2">Name Grade
+                                class="mr-sm-2">اسم المرحلة
                                 :</label>
 
                             <div class="mb-3">
@@ -75,7 +75,7 @@ require '../dbcon.php';
 
                             <div class="mb-3">
                                 <label for="Name_en"
-                                class="mr-sm-2">Name class
+                                class="mr-sm-2">اسم المستوى
                                 :</label>
 
                             <div class="mb-3">
@@ -110,7 +110,7 @@ require '../dbcon.php';
 
 
                             <div class="mb-3">
-                                <button type="submit" name="save_student" class="btn btn-primary">Save Student</button>
+                                <button type="submit" name="save_student" class="btn btn-primary">حفظ</button>
                             </div>
 
                        

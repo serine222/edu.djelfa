@@ -37,28 +37,28 @@ require '../dbcon.php';
                                     <input type="hidden" name="id_teacher" value="<?= $teacher['id_teacher']; ?>">
 
                                     <div class="mb-3">
-                                        <label>teacher Name</label>
+                                        <label>اسم الاستاذ</label>
                                         <input type="text" name="name" value="<?=$teacher['Name'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>teacher Email</label>
+                                        <label>بريد الالكتروني</label>
                                         <input type="email" name="Email" value="<?=$teacher['Email'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>teacher Password</label>
+                                        <label>كلمة السر</label>
                                         <input type="text" name="Password" value="<?=$teacher['Password'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>teacher Address</label>
+                                        <label>عنوان المعلم</label>
                                         <input type="text" name="Address" value="<?=$teacher['Address'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>teacher Joining_Date</label>
+                                        <label>تاريخ انضمام المعلم</label>
                                         <input type="text" name="Joining_Date" value="<?=$teacher['Joining_Date'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <button type="submit" name="update_teacher" class="btn btn-primary">
-                                            Update teacher
+                                            تعديل
                                         </button>
                                     </div>
 
