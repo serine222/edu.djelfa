@@ -55,11 +55,21 @@ require '../dbcon.php';
                                                 <td>
                                                 
                                                   
-                                                <a href="teacher-view.php?id=<?= $teacher['id_teacher']; ?>" class="btn btn-info btn-sm">تفاصيل</a>
-                                                    <a href="teacher-edit.php?id=<?= $teacher['id_teacher']; ?>" class="btn btn-success btn-sm">تعديل</a>
-                                                    <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_teacher" value="<?= $teacher['id_teacher']; ?>" class="btn btn-danger btn-sm">حذف</button>
+                                               
+                                                    <div class="dropdown show">
+                                                        <a class="btn btn-success btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            العمليات
+                                                        </a>
+                                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                            <a class="dropdown-item" href="teacher-view.php?id=<?= $teacher['id_teacher']; ?>"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp;  عرض بيانات الاستاذ</a>
+                                                            <a class="dropdown-item" href="teacher-edit.php?id=<?= $teacher['id_teacher']; ?>"><i style="color:green" class="fa fa-edit"></i>&nbsp;  تعديل بيانات الاستاذ</a>
+                                                           
+                                                            <form action="code.php" method="POST" class="d-inline">
+                                                        <button type="submit" name="delete_teacher" value="<?= $teacher['id_teacher']; ?>" class="dropdown-item"><i style="color: red" class="fa fa-trash"></i>&nbsp; حذف بيانات الاستاذ</button>
                                                     </form>
+
+
+
                                                 </td>
                                             </tr>
                                             <?php
