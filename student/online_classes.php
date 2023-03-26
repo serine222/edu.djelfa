@@ -19,56 +19,28 @@ include '../components/header.php';
       
       <h4 class="title text-center">حصص اونلاين</h4>
        <div class="filter">
-      
-  <!-- <div class="card card-no-hover text-center no-shadow border-green">
-    <div class="card-body shadow">
-        <label class="bold" for="type">المرحلة :</label>
-        <select class="dropdown bootstrap-select  p-1" style="width: 10%;">
-        <div class="card-body shadow">
-        <label class="bold" for="type">المرحلة :</label><
-        <select class="dropdown bootstrap-select  p-1" style="width: 10%;">
-          <option value="all" selected>الكل</option>
-          <option value="1">ابتدائي</option>
-          <option value="2">متوسط</option>
-          <option value="3">ثانوي</option>
-        </select>
-        <label class="bold" for="type">السنة :</label>
-        <select class="dropdown bootstrap-select dropup p-1" style="width: 10%;">
-        <option value="all" selected>الكل</option>
-        <option value="1">اولى</option>
-        <option value="2">ثانية</option>
-        <option value="3">ثالثة</option>
-        <option value="4">رابعة</option>
-        <option value="5">خامسة</option>
-      </select>
-      <label class="bold" for="type">المرحلة :</label>
-      <select class="dropdown bootstrap-select dropup p-1" style="width: 10%;">
-        <option value="all" selected>الكل</option>
-        <option value="1">لغة عربية</option>
-        <option value="2">رياضيات</option>
-        <option value="3">علوم طبيعية</option>
-        <option value="">علوم فيزيائية</option>
-        <option value="">لغة فرنسية</option>
-        <option value="">لغة انجليزية</option>
-        <option value="">اجتماعيات</option>
-        <option value="">علوم اسلامية</option>
-        <option value="">تربية مدنية</option>
-        <option value="">اعلام الي</option>  
-        <option value="">موسيقى</option>
-        <option value="">رسم</option>
-      </select>
-      <label class="name" for="type">الاستاذ :</label>
-      <input type="text" name="name" id="" placeholder="اسم الاستاذ" style="height: 40px;";>
-      </div>
-  </div> -->
+
   <div class="t-table justify-content-between">
      <h6 class="title2">الحصص المبرمجة مع التفاصيل</h6> 
-     <a href="add.php"> <button class="btn" id="#btn"><i class="fa-solid fa-plus"></i>اضافة حصة جديدة</button></a>
+     
   </div>
   <table class="table table-hover shadow text-center">
       <thead>
       <tr class="df">
     
+
+      <?php
+                        if(isset($_GET['id']))
+                        {
+                            $student_id = mysqli_real_escape_string($con, $_GET['id']);
+                            $query = "SELECT * FROM students WHERE id='$student_id' ";
+                            $query_run = mysqli_query($con, $query);
+
+                            if(mysqli_num_rows($query_run) > 0)
+                            {
+                                $student = mysqli_fetch_array($query_run);
+                                $classroom_id = $student['classroom_id'];
+                                ?>
 
         <th scope="col">#</th>
         <th  scope="col">المرحلة</th>
@@ -84,27 +56,17 @@ include '../components/header.php';
     </thead>
     <tbody>
       
-      <!-- <tr>
-          <td>ابتدائي</td>
-          <td>خامسة</td>
-          <td>رياضيات</td>
-          <td>محمدي اسامة</td>
-          <td>القسمة الاقليدية</td>
-          <td>2023/03/14</td>
-          <td>17:30</td>
-          <td><button class="btn">انظم الان</button></td>
-      </tr> -->
-
-         <!-- @foreach($online_classes as $online_classe) -->
 
          <?php 
-                                    $query = "SELECT * FROM online_classes";
+                                   
+                                    $query = "SELECT * FROM online_classes WHERE classroom_id='$classroom_id' ";
                                     $query_run = mysqli_query($con, $query);
 
                                     if(mysqli_num_rows($query_run) > 0)
                                     {
                                         foreach($query_run as $online_classe)
                                         {
+                                       
                                             ?>
                                             <tr>
                                            
@@ -142,6 +104,7 @@ include '../components/header.php';
                                                         $classroom = mysqli_fetch_array($query_run);
                                                         ?>
                                                 <td><?=$classroom['Name_Class']; ?></td>
+                                                
                                                 <?php
                                                     }
                                                     else
@@ -180,7 +143,7 @@ include '../components/header.php';
                                                
 
                                               
-                                                <td class="text-danger"><a href="<?=$online_classe['join_url']; ?>" target="_blank">انضم الان</a></td>
+                                                <td class="text-danger"><a href="{<?=$online_classe['join_url']; ?>}" target="_blank">انضم الان</a></td>
 
                                                 <td>
                                                 
@@ -193,8 +156,9 @@ include '../components/header.php';
                                                 </td>
                                             </tr>
                                             <?php
-                                                }
+                                                
                                             }
+                                        }
                                             else
                                             {
                                                 echo "<h5> No Record Found </h5>";
@@ -202,6 +166,15 @@ include '../components/header.php';
                                         ?>
 
                                       
+
+<?php
+                            }
+                            else
+                            {
+                                echo "<h4>No Such Id Found</h4>";
+                            }
+                        }
+                        ?>
       
     </tbody>
   </table>

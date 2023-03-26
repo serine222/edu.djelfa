@@ -14,8 +14,8 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Grade View Details 
-                            <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                        <h4>المستوى 
+                            <a href="index.php" class="btn btn-danger float-end">الخلف</a>
                         </h4>
                     </div>
                     <div class="card-body">

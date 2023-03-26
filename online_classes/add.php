@@ -7,20 +7,14 @@ require '../dbcon.php';
 <body>
 <?php include '../components/header.php';?>
 <!-- row -->
-<div class="row">
-<div class="col-md-12 mb-30">
-<div class="card card-statistics h-100">
-<div class="card-body">
+<div class="container bg-white col-xl-10 col-sm-12" >
+    <div class="container">
+     <div class="card no-border shadow">
 
-<!-- @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif -->
+<div class="card-body">
+<div>
+              <h4 class="title text-center">اضافة حصة جديدة</h4>
+            </div>
 
 <form method="post" action="code.php" >
     
@@ -178,6 +172,7 @@ require '../dbcon.php';
                         
 
                     </div>
+                    
                     <button class="btn btn-success btn-sm nextBtn btn-lg pull-right"
                         type="submit" name="save_online_classe">بدأ الحصة</button>
                 </form>
@@ -219,4 +214,9 @@ require '../dbcon.php';
         });
     });
 </script> -->
+
+
+
+
+
 

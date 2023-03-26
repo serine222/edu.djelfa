@@ -11,13 +11,13 @@ if(isset($_POST['delete_Grade']))
 
     if($query_run)
     {
-        $_SESSION['message'] = "Grade Deleted Successfully";
+        $_SESSION['message'] = "تم حذف المستوى";
         header("Location: index.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Grade Not Deleted";
+        $_SESSION['message'] = "لم يتم حذف المرحلة";
         header("Location: index.php");
         exit(0);
     }
@@ -36,13 +36,13 @@ if(isset($_POST['update_Grade']))
 
     if($query_run)
     {
-        $_SESSION['message'] = "Grade Updated Successfully";
+        $_SESSION['message'] = "تم تعديل المرحلة بنجاح";
         header("Location: index.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Grade Not Updated";
+        $_SESSION['message'] = "لم يتم تعديل المرحلة";
         header("Location: index.php");
         exit(0);
     }
@@ -63,13 +63,13 @@ if(isset($_POST['save_Grade']))
     $query_run = mysqli_query($con, $query);
     if($query_run)
     {
-        $_SESSION['message'] = "Grade Created Successfully";
+        $_SESSION['message'] = "تم حفظ المرحلة";
         header("Location: Grades-create.php");
         exit(0);
     }
     else
     {
-        $_SESSION['message'] = "Grade Not Created";
+        $_SESSION['message'] = "لم يتم حفظ المرحلة";
         header("Location: Grades-create.php");
         exit(0);
     }
