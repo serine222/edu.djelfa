@@ -8,39 +8,15 @@ SET time_zone = "+00:00";
 --
 
 --
+CREATE TABLE `classrooms` (
+  `classroom_id`INT(6) AUTO_INCREMENT ,
+    PRIMARY KEY (classroom_id),
+    Name_Class VARCHAR(191) NOT NULL
 
---
 
---
--- Table structure for table `Grades`
---
-
-CREATE TABLE `Grades` (
-  `Grade_id` INT(6) AUTO_INCREMENT PRIMARY KEY,
-  `Grade_Notes` varchar(191) NOT NULL,
-  `Grade_Name` varchar(191) NOT NULL
-  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- --------------------------------------------------------
-
---
--- Table structure for table `classrooms`
---
-CREATE TABLE `classrooms` (
-  `classroom_id` INT(6) AUTO_INCREMENT ,
-  
-    Name_Class VARCHAR(191) NOT NULL,
-  `Grade_id` INT(6)  ,
-      PRIMARY KEY (classroom_id),
-    
-
-    FOREIGN KEY (Grade_id) REFERENCES Grades(Grade_id)
-
-) ;
-
--- --------------------------------------------------------
 
 
 
@@ -109,13 +85,12 @@ CREATE TABLE students (
     name VARCHAR(191) NOT NULL,
     email VARCHAR(191) NOT NULL,
     phone VARCHAR(191) NOT NULL,
-    course VARCHAR(191) NOT NULL,
+   
    
   
      `classroom_id` INT(6),
-     FOREIGN KEY (classroom_id) REFERENCES classrooms(classroom_id),
-  	`Grade_id` INT(6)  ,
-    FOREIGN KEY (Grade_id) REFERENCES Grades(Grade_id)
+     FOREIGN KEY (classroom_id) REFERENCES classrooms(classroom_id)
+  	
    
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- --------------------------------------------------------
@@ -151,8 +126,7 @@ CREATE TABLE `online_classes` (
   
      `classroom_id` INT(6),
      FOREIGN KEY (classroom_id) REFERENCES classrooms(classroom_id),
-  	`Grade_id` INT(6)  ,
-    FOREIGN KEY (Grade_id) REFERENCES Grades(Grade_id),
+  
     `id_teacher` INT(6)  ,
     FOREIGN KEY (id_teacher) REFERENCES teachers(id_teacher)
    
@@ -177,3 +151,40 @@ VALUES ('6','شريعة');
 
 INSERT INTO specializations
 VALUES ('7','فيزياء');
+
+
+INSERT INTO classrooms
+VALUES ('1','الاولى ابتدائي');
+
+INSERT INTO classrooms
+VALUES ('2','الثانية ابتدائي');
+
+INSERT INTO classrooms
+VALUES ('3','الثالثة ابتدائي');
+
+INSERT INTO classrooms
+VALUES ('4','الرابعة ابتدائي');
+
+INSERT INTO classrooms
+VALUES ('5','الخامسة ابتدائي');
+
+INSERT INTO classrooms
+VALUES ('6','الاولى متوسط ');
+
+INSERT INTO classrooms
+VALUES ('7','الثانية متوسط');
+
+INSERT INTO classrooms
+VALUES ('8','الثالثة متوسط');
+
+INSERT INTO classrooms
+VALUES ('9','الرابعة متوسط');
+
+INSERT INTO classrooms
+VALUES ('10',' الاولى ثانوي');
+
+INSERT INTO classrooms
+VALUES ('11',' الثانية  ثانوي');
+
+INSERT INTO classrooms
+VALUES ('12',' الثالثة ثانوي');

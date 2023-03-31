@@ -70,32 +70,22 @@ include '../components/header.php';
       <tr class="df">
     
 
-        <th scope="col">#</th>
-        <th  scope="col">المرحلة</th>
-        <th scope="col">الصف</th>
+        <!-- <th scope="col">#</th> -->
+       
+        <th scope="col">السنة</th>
+        <th scope="col">المادة </th>
 
-        <th scope="col">المعلم</th>
+        <th scope="col">الاستاذ(ة)</th>
         <th scope="col">عنوان الحصة</th>
         <th scope="col">تاريخ البداية</th>
-        <th  scope="col">وقت الحصة</th>
+        <th  scope="col">المدة </th>
         <th scope="col">رابط الحصة</th>
-        <th scope="col">العمليات</th>
+        <!-- <th scope="col"></th> -->
       </tr>
     </thead>
     <tbody>
       
-      <!-- <tr>
-          <td>ابتدائي</td>
-          <td>خامسة</td>
-          <td>رياضيات</td>
-          <td>محمدي اسامة</td>
-          <td>القسمة الاقليدية</td>
-          <td>2023/03/14</td>
-          <td>17:30</td>
-          <td><button class="btn">انظم الان</button></td>
-      </tr> -->
-
-         <!-- @foreach($online_classes as $online_classe) -->
+      
 
          <?php 
                                     $query = "SELECT * FROM online_classes";
@@ -108,30 +98,8 @@ include '../components/header.php';
                                             ?>
                                             <tr>
                                            
-                                            <td><?=$online_classe['id']; ?></td>
-                                            <?php
-                                                $Grade_id = $online_classe['Grade_id'];
-                                                $query = "SELECT * FROM Grades WHERE Grade_id='$Grade_id' ";
-                                               $query_run = mysqli_query($con, $query);
-                                               if(mysqli_num_rows($query_run) > 0)
-                                                    {
-                                                        $Grade = mysqli_fetch_array($query_run);
-                                                        ?>
-
-
-
-
-                                                <td><?=$Grade['Grade_Name']; ?></td>
-
-                                                <?php
-                                                    }
-                                                    else
-                                                    {
-                                                        echo "<h4>No Such Id Found</h4>";
-                                                    }
-                                                
-                                                ?>
-
+                                            <!-- <td><?=$online_classe['id']; ?></td> -->
+                                           
 
                                                 <?php
                                                 $classroom_id = $online_classe['classroom_id'];
@@ -143,6 +111,41 @@ include '../components/header.php';
                                                         ?>
                                                 <td><?=$classroom['Name_Class']; ?></td>
                                                 <?php
+                                                    }
+                                                    else
+                                                    {
+                                                        echo "<h4>No Such Id Found</h4>";
+                                                    }
+                                                
+                                                ?>
+
+<?php
+                                                $id_teacher = $online_classe['id_teacher'];
+                                                $query = "SELECT * FROM teachers WHERE id_teacher='$id_teacher' ";
+                                               $query_run = mysqli_query($con, $query);
+                                               if(mysqli_num_rows($query_run) > 0)
+                                                    {
+                                                        $teacher = mysqli_fetch_array($query_run);
+
+                                                        $id_specialization = $teacher['id_specialization'];
+                                                        $query = "SELECT * FROM specializations WHERE id_specialization='$id_specialization' ";
+                                                       $query_run = mysqli_query($con, $query);
+                                                       if(mysqli_num_rows($query_run) > 0)
+                                                            {
+                                                                $specializations = mysqli_fetch_array($query_run);
+                                                                ?>
+                                                        
+                                                        
+                                                                        
+                                                                        <td><?=$specializations['Name_specialization']; ?></td>
+
+                                                                        <?php
+
+                                                                         }
+                                                    else
+                                                    {
+                                                        echo "<h4>No Such Id Found</h4>";
+                                                    }
                                                     }
                                                     else
                                                     {
@@ -182,7 +185,7 @@ include '../components/header.php';
                                               
                                                 <td class="text-danger"><a href="<?=$online_classe['join_url']; ?>" target="_blank">انضم الان</a></td>
 
-                                                <td>
+                                                <!-- <td>
                                                 
                                                   
                                                 
@@ -190,7 +193,7 @@ include '../components/header.php';
                                                     <form action="code.php" method="POST" class="d-inline">
                                                         <button type="submit" name="delete_online_classe" value="<?= $online_classe['id']; ?>" class="btn btn-danger btn-sm">حذف</button>
                                                     </form>
-                                                </td>
+                                                </td> -->
                                             </tr>
                                             <?php
                                                 }
@@ -209,3 +212,5 @@ include '../components/header.php';
 </div>
 
 <?php include '../components/footer.php';?>
+
+

@@ -1,5 +1,4 @@
-
-  
+<div class="footer">© 2023 <span>edu.djelfa</span> All Right Reserved</div>
 
   
   

@@ -42,9 +42,9 @@ include '../components/header.php';
                                 $classroom_id = $student['classroom_id'];
                                 ?>
 
-        <th scope="col">#</th>
-        <th  scope="col">المرحلة</th>
-        <th scope="col">الصف</th>
+        
+       
+        <th scope="col">السنة</th>
 
         <th scope="col">المعلم</th>
         <th scope="col">عنوان الحصة</th>
@@ -70,29 +70,8 @@ include '../components/header.php';
                                             ?>
                                             <tr>
                                            
-                                            <td><?=$online_classe['id']; ?></td>
-                                            <?php
-                                                $Grade_id = $online_classe['Grade_id'];
-                                                $query = "SELECT * FROM Grades WHERE Grade_id='$Grade_id' ";
-                                               $query_run = mysqli_query($con, $query);
-                                               if(mysqli_num_rows($query_run) > 0)
-                                                    {
-                                                        $Grade = mysqli_fetch_array($query_run);
-                                                        ?>
-
-
-
-
-                                                <td><?=$Grade['Grade_Name']; ?></td>
-
-                                                <?php
-                                                    }
-                                                    else
-                                                    {
-                                                        echo "<h4>No Such Id Found</h4>";
-                                                    }
-                                                
-                                                ?>
+                                            
+                                       
 
 
                                                 <?php

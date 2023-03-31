@@ -18,7 +18,7 @@ require '../dbcon.php';
                 <div class="card">
                     <div class="card-header">
                         <h4>اضافة الطالب 
-                            <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="index.php" class="btn btn-danger float-end">الخلف</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -36,41 +36,9 @@ require '../dbcon.php';
                                 <label>هاتف الطالب</label>
                                 <input type="text" name="phone" class="form-control">
                             </div>
-                            <div class="mb-3">
-                                <label>دروس</label>
-                                <input type="text" name="course" class="form-control">
-                            </div>
-                       
 
-                            <div class="mb-3">
-                                <label for="Name_en"
-                                class="mr-sm-2">اسم المرحلة
-                                :</label>
 
-                            <div class="mb-3">
-                                <select class="fancyselect" name="Grade_id">
-                                    
-                                <?php 
-                                    $query = "SELECT * FROM grades";
-                                    $query_run = mysqli_query($con, $query);
-
-                                    if(mysqli_num_rows($query_run) > 0)
-                                    {
-                                        foreach($query_run as $Grade)
-                                        {
-                                            ?>
-                                <option value='<?= $Grade['Grade_id']; ?>'><?= $Grade['Grade_Name']; ?> </option>
-
-                                <?php      }
-                                    }
-                                    else
-                                    {
-                                        echo "<h5> No Record Found </h5>";
-                                    }
-                                ?>
-
-                                </select>
-                            </div>
+                        
                         
 
                             <div class="mb-3">

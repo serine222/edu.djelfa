@@ -13,7 +13,7 @@ require '../dbcon.php';
     <div class="container mt-4">
 
         <?php include('message.php'); ?>
-
+<div class='container'>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -31,7 +31,6 @@ require '../dbcon.php';
                                     <th>اسم الطالب</th>
                                     <th>بريد الالكتروني</th>
                                     <th>الهاتف</th>
-                                    <th>الدروس</th>
                                     <th>العمليات</th>
                                 </tr>
                             </thead>
@@ -50,14 +49,9 @@ require '../dbcon.php';
                                                 <td><?= $student['name']; ?></td>
                                                 <td><?= $student['email']; ?></td>
                                                 <td><?= $student['phone']; ?></td>
-                                                <td><?= $student['course']; ?></td>
+                                               
                                                 <td>
-                                                    <!-- <a href="student-view.php?id=<?= $student['id']; ?>" class="btn btn-info btn-sm">تفاصيل</a>
-                                                    <a href="student-edit.php?id=<?= $student['id']; ?>" class="btn btn-success btn-sm">تعديل</a>
-                                                    <a href="online_classes.php?id=<?= $student['id']; ?>" class="btn btn-info btn-sm">الحصص</a>
-                                                    <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">حذف</button>
-                                                    </form> -->
+                                                    
                                                     
                                                     <div class="dropdown show">
                                                         <a class="btn btn-success btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -96,9 +90,10 @@ require '../dbcon.php';
             </div>
         </div>
     </div> 
-       <?php include '../components/footer.php';?>
+    </div>
+     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <?php include '../components/footer.php';?>
 </body>
 </html>

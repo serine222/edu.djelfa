@@ -36,12 +36,12 @@ if(isset($_POST['delete_online_classe']))
 //     $start_url = mysqli_real_escape_string($con, $_POST['start_url']);
 //     $join_url = mysqli_real_escape_string($con, $_POST['join_url'] );
 //     $classroom_id = mysqli_real_escape_string($con, $_POST['classroom_id']);
-//     $Grade_id = mysqli_real_escape_string($con, $_POST['Grade_id']);
+
 //     $id_teacher = mysqli_real_escape_string($con, $_POST['id_teacher']);
 
 
 
-//     $query = "UPDATE online_classes SET duration='$duration', id_teacher='$id_teacher', meeting_id='$meeting_id', start_time='$start_time',topic='$topic',password='$password',start_url='$start_url',join_url='$join_url',classroom_id='$classroom_id',Grade_id='$Grade_id' WHERE id='$online_classe_id' ";
+//     $query = "UPDATE online_classes SET duration='$duration', id_teacher='$id_teacher', meeting_id='$meeting_id', start_time='$start_time',topic='$topic',password='$password',start_url='$start_url',join_url='$join_url',classroom_id='$classroom_id'WHERE id='$online_classe_id' ";
 //     $query_run = mysqli_query($con, $query);
 
 //     if($query_run)
@@ -71,11 +71,11 @@ if(isset($_POST['save_online_classe']))
     $start_url = mysqli_real_escape_string($con, $_POST['start_url']);
     $join_url = mysqli_real_escape_string($con, $_POST['join_url'] );
     $classroom_id = mysqli_real_escape_string($con, $_POST['classroom_id']);
-    $Grade_id = mysqli_real_escape_string($con, $_POST['Grade_id']);
+   
     $id_teacher = mysqli_real_escape_string($con, $_POST['id_teacher']);
 
-    $query = "INSERT INTO online_classes (meeting_id,topic,start_time,duration,password,start_url,join_url,classroom_id,Grade_id,id_teacher) VALUES 
-    ('$meeting_id','$topic','$start_time','$duration','$password','$start_url','$join_url','$classroom_id','$Grade_id','$id_teacher')";
+    $query = "INSERT INTO online_classes (meeting_id,topic,start_time,duration,password,start_url,join_url,classroom_id,id_teacher) VALUES 
+    ('$meeting_id','$topic','$start_time','$duration','$password','$start_url','$join_url','$classroom_id','$id_teacher')";
 
     $query_run = mysqli_query($con, $query);
 
@@ -92,6 +92,12 @@ if(isset($_POST['save_online_classe']))
         exit(0);
     }
 }
+
+
+
+
+
+
 
 
 ?>

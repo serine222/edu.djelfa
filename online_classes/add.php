@@ -19,34 +19,7 @@ require '../dbcon.php';
 <form method="post" action="code.php" >
     
 <div class="row">
-<div class="col-md-4">
-<div class="form-group">
-<label >المرحلة الدراسية <span
-        class="text-danger">*</span></label>
-<select class="custom-select mr-sm-2" name="Grade_id">
-    <option selected disabled>المراحل الدراسية</option>
 
-    <?php 
-    $query = "SELECT * FROM grades";
-    $query_run = mysqli_query($con, $query);
-
-    if(mysqli_num_rows($query_run) > 0)
-    {
-        foreach($query_run as $Grade)
-        {
-            ?>
-<option value='<?= $Grade['Grade_id']; ?>'><?= $Grade['Grade_Name']; ?> </option>
-
-<?php      }
-    }
-    else
-    {
-        echo "<h5> No Record Found </h5>";
-    }
-?>
-</select>
-</div>
-</div>
 
 
 <div class="col-md-4">
@@ -110,39 +83,42 @@ require '../dbcon.php';
 </div>
 </div>
 
+<div class="col-md-4">
+    <div class="form-group">
+        <label>رقم الاجتماع : <span class="text-danger">*</span></label>
+        <input class="form-control" name="meeting_id" type="number">
+</div>
+</div>
+
+
         
     </div><br>
     <div class="row">
 
-<div class="col-md-2">
-    <div class="form-group">
-        <label>رقم الاجتماع : <span class="text-danger">*</span></label>
-        <input class="form-control" name="meeting_id" type="number">
-    </div>
-</div>
 
 
-<div class="col-md-2">
+
+<div class="col-md-3">
     <div class="form-group">
         <label>عنوان الحصة : <span class="text-danger">*</span></label>
         <input class="form-control" name="topic" type="text">
     </div>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-3">
     <div class="form-group">
         <label>تاريخ ووقت الحصة : <span class="text-danger">*</span></label>
         <input class="form-control" type="datetime-local" name="start_time">
     </div>
 </div>
-<div class="col-md-2">
+<div class="col-md-3">
     <div class="form-group">
         <label>مدة الحصة بالدقائق : <span class="text-danger">*</span></label>
         <input class="form-control" name="duration" type="number">
     </div>
 </div>
 
-<div class="col-md-2">
+<div class="col-md-3">
     <div class="form-group">
         <label>كلمة المرور الاجتماع : <span class="text-danger">*</span></label>
         <input class="form-control" name="password" type="text">

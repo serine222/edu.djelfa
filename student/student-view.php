@@ -50,39 +50,8 @@ require '../dbcon.php';
                                             <?=$student['phone'];?>
                                         </p>
                                     </div>
-                                    <div class="mb-3">
-                                        <label>دروس</label>
-                                        <p class="form-control">
-                                            <?=$student['course'];?>
-                                        </p>
-                                    </div>
-                                    <?php
-                                                $Grade_id = $student['Grade_id'];
-                                                $query = "SELECT * FROM Grades WHERE Grade_id='$Grade_id' ";
-                                               $query_run = mysqli_query($con, $query);
-                                               if(mysqli_num_rows($query_run) > 0)
-                                                    {
-                                                        $Grade = mysqli_fetch_array($query_run);
-                                                        ?>
+                                 
 
-
-
-
-                                                        <div class="mb-3">
-                                                        <label>المرحلة</label>
-                                                        <p class="form-control">
-                                                        <?=$Grade['Grade_Name']; ?>
-                                                        </p>
-                                                        </div>
-
-                                                <?php
-                                                    }
-                                                    else
-                                                    {
-                                                        echo "<h4>No Such Id Found</h4>";
-                                                    }
-                                                
-                                                ?>
 
 <?php
                                                 $classroom_id = $student['classroom_id'];

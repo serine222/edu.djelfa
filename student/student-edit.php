@@ -48,10 +48,7 @@ require '../dbcon.php';
                                         <label>هاتف</label>
                                         <input type="text" name="phone" value="<?=$student['phone'];?>" class="form-control">
                                     </div>
-                                    <div class="mb-3">
-                                        <label>دروس</label>
-                                        <input type="text" name="course" value="<?=$student['course'];?>" class="form-control">
-                                    </div>
+
                                     <div class="mb-3">
                                         <button type="submit" name="update_student" class="btn btn-primary">
                                             تعديل

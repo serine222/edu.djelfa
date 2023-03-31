@@ -26,18 +26,7 @@
             <li class="nav-item m-2">
                 <a class="nav-link" href="/edu.djelfa/student">الطلاب</a>
             </li> 
-            <li class="nav-item m-2">
-                <a class="nav-link" href="/edu.djelfa/classrooms">المستويات</a>
-            </li>
-            <li class="nav-item m-2">
-                <a class="nav-link" href="/edu.djelfa/Grades"> المراحل </a>
-            </li>   
-            <!-- <li class="nav-item m-2">
-                <a class="nav-link" href="#"><i class="fa-solid fa-user-plus"></i>تسجيل الدخول</a>
-            </li>  
-            <li class="nav-item m-2">
-                <a class="nav-link" href="#"><i class="fa-solid fa-user-plus"></i>انشاء حساب</a>
-            </li>   -->
+
           </ul>
       </div>
     </div>

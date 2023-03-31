@@ -18,7 +18,7 @@
                 <a class="nav-link" href="/edu.djelfa"><i class="fa-regular fa-newspaper"></i>الاخبار</a>
             </li>
             <li class="nav-item m-2">
-                <a class="nav-link" href="/edu.djelfa/online_classes"><i class="fa-solid fa-chalkboard"></i>حصص اونلاين</a>
+                <a class="nav-link" href="/edu.djelfa"><i class="fa-solid fa-chalkboard"></i>حصص اونلاين</a>
             </li>
             <li class="nav-item m-2">
                 <a class="nav-link" href="/edu.djelfa/teacher">المعلمين</a>
@@ -26,19 +26,9 @@
             <li class="nav-item m-2">
                 <a class="nav-link" href="/edu.djelfa/student">الطلاب</a>
             </li> 
-            <li class="nav-item m-2">
-                <a class="nav-link" href="/edu.djelfa/classrooms">المستويات</a>
-            </li>
-            <li class="nav-item m-2">
-                <a class="nav-link" href="/edu.djelfa/Grades"> المراحل </a>
-            </li>  
+          
            
-            <!-- <li class="nav-item m-2">
-                <a class="nav-link" href="#"><i class="fa-solid fa-user-plus"></i>تسجيل الدخول</a>
-            </li>  
-            <li class="nav-item m-2">
-                <a class="nav-link" href="#"><i class="fa-solid fa-user-plus"></i>انشاء حساب</a>
-            </li>   -->
+     
           </ul>
       </div>
     </div>
