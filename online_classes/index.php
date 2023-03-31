@@ -15,10 +15,10 @@ include '../components/header.php';
 
 <!--Zoom class schedule-->  
   <div class="container bg-white col-xl-10 col-sm-12">
-  
+    <div class="container">
       
-      <h4 class="title text-center">قائمة الاساتذة</h4>
-      
+      <h4 class="title text-center">حصص اونلاين</h4>
+       <div class="filter">
       
   <!-- <div class="card card-no-hover text-center no-shadow border-green">
     <div class="card-body shadow">
@@ -209,10 +209,9 @@ include '../components/header.php';
     </tbody>
   </table>
 </div>
+</div>
+</div>
 
-</div>
-</div>
-</div>
 
 <?php include '../components/footer.php';?>
 
