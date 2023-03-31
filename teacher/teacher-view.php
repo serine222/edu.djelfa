@@ -8,7 +8,7 @@ require '../dbcon.php';
 <body>
 <?php include '../components/header.php';?>
 
-    <div class="container mt-5">
+    <div class="container ">
 
         <div class="row">
             <div class="col-md-12">
@@ -69,10 +69,10 @@ require '../dbcon.php';
                 </div>
             </div>
         </div>
-    </div>
+        </div>
+ 
+
     <?php include '../components/footer.php';?>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

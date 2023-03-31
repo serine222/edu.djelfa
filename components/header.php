@@ -21,7 +21,7 @@
                 <a class="nav-link" href="/edu.djelfa/online_classes"><i class="fa-solid fa-chalkboard"></i>حصص اونلاين</a>
             </li>
             <li class="nav-item m-2">
-                <a class="nav-link" href="/edu.djelfa/teacher">المعلمين</a>
+                <a class="nav-link" href="/edu.djelfa/teacher">الاساتذة</a>
             </li>
             <li class="nav-item m-2">
                 <a class="nav-link" href="/edu.djelfa/student">الطلاب</a>

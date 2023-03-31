@@ -157,6 +157,7 @@ require '../dbcon.php';
         </div>
     </div>
 </div>
+
 <!-- row closed -->
 <?php include '../components/footer.php';?>
 

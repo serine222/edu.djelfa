@@ -10,28 +10,30 @@ require '../dbcon.php';
 <body>
 <?php include '../components/header.php';?>
   
-    <div class="container mt-4">
+    
 
         <?php include('message.php'); ?>
-<div class='container'>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>طالب 
-                            <a href="student-create.php" class="btn btn-primary float-end">اضافة طالب </a>
-                        </h4>
-                    </div>
-                    <div class="card-body">
 
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>اسم الطالب</th>
-                                    <th>بريد الالكتروني</th>
-                                    <th>الهاتف</th>
-                                    <th>العمليات</th>
+
+                            <div class="container bg-white col-xl-10 col-sm-12">
+  
+      
+  <h4 class="title text-center">قائمة الطلاب</h4>
+   <div class="filter"> 
+   <div class="t-table justify-content-between">
+     <h6 class="title2">  الطالب</h6> 
+     <a href="student-create.php"> <button class="btn" id="#btn"><i class="fa-solid fa-plus"></i>اضافة طالب</button></a>
+  </div>
+  <table class="table table-hover shadow text-center">
+      <thead>
+      <tr class="df">
+
+                                
+                                    <!-- <th scope="col">ID</th> -->
+                                    <th scope="col">اسم الطالب</th>
+                                    <th scope="col">بريد الالكتروني</th>
+                                    <th scope="col">الهاتف</th>
+                                    <th scope="col">العمليات</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -45,7 +47,7 @@ require '../dbcon.php';
                                         {
                                             ?>
                                             <tr>
-                                                <td><?= $student['id']; ?></td>
+                                                <!-- <td><?= $student['id']; ?></td> -->
                                                 <td><?= $student['name']; ?></td>
                                                 <td><?= $student['email']; ?></td>
                                                 <td><?= $student['phone']; ?></td>

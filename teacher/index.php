@@ -10,29 +10,29 @@ require '../dbcon.php';
 <body>
 <?php include '../components/header.php';?>
   
-    <div class="container mt-4">
+<div class="container bg-white col-xl-10 col-sm-12">
+  
+      
+  <h4 class="title text-center">حصص اونلاين</h4>
+   <div class="filter">
 
         <?php include('message.php'); ?>
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>الاساتذة
-                            <a href="teacher-create.php" class="btn btn-primary float-end">اضافة استاذ جديد</a>
-                        </h4>
-                    </div>
-                    <div class="card-body">
+        <div class="t-table justify-content-between">
+     <h6 class="title2">الاساتذة</h6> 
+     <a href="teacher-create.php"> <button class="btn" id="#btn"><i class="fa-solid fa-plus"></i>اضافة استاذ جديدة</button></a>
+  </div>
+  <table class="table table-hover shadow text-center">
+      <thead>
+      <tr class="df">
 
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>اسم الاستاذ</th>
-                                    <th>بريد الالكتروني</th>
-                                    <th>الموقع السكن</th>
-                                    <th>تاريخ البدا العمل</th>
-                                    <th>العمليات</th>
+                                
+                                    <!-- <th scope="col">ID</th> -->
+                                    <th scope="col">اسم الاستاذ</th>
+                                    <th scope="col">بريد الالكتروني</th>
+                                    <th scope="col">الموقع السكن</th>
+                                    <th scope="col">تاريخ البدا العمل</th>
+                                    <th scope="col">العمليات</th>
                                     
                                 </tr>
                             </thead>
@@ -47,7 +47,7 @@ require '../dbcon.php';
                                         {
                                             ?>
                                             <tr>
-                                                <td><?= $teacher['id_teacher']; ?></td>
+                                                <!-- <td><?= $teacher['id_teacher']; ?></td> -->
                                                 <td><?= $teacher['Name']; ?></td>
                                                 <td><?= $teacher['Email']; ?></td>
                                                 <td><?= $teacher['Address']; ?></td>
@@ -87,11 +87,10 @@ require '../dbcon.php';
                     </div>
                 </div>
             </div>
-        </div>
-    </div> 
+</div>
+
+        
        <?php include '../components/footer.php';?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
-</html>
