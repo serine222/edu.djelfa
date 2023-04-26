@@ -1,5 +1,6 @@
 ## Getting started
 
+
 1. Copy files to htdocs
 2. Inside phpmyadmin:
 	- create db with the name "edu.djelfa"
