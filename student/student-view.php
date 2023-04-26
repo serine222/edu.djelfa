@@ -15,7 +15,7 @@ require '../dbcon.php';
                 <div class="card">
                     <div class="card-header">
                         <h4>طالب 
-                            <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="index.php" class="btn btn-danger float-end">الخلف</a>
                         </h4>
                     </div>
                     <div class="card-body">

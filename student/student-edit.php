@@ -16,8 +16,8 @@ require '../dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Edit 
-                            <a href="index.php" class="btn btn-danger float-end">BACK</a>
+                        <h4>تعديل بيانات الطالب
+                            <a href="index.php" class="btn btn-danger float-end">الخلف</a>
                         </h4>
                     </div>
                     <div class="card-body">

@@ -17,7 +17,7 @@ include '../components/header.php';
   <div class="container bg-white col-xl-10 col-sm-12">
     <div class="container">
       
-      <h4 class="title text-center">حصص اونلاين</h4>
+      <h4 class="title text-center">حصص اونلاين الخاصة بهذا الطالب</h4>
        <div class="filter">
 
   <div class="t-table justify-content-between">

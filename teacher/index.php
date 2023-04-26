@@ -13,7 +13,7 @@ require '../dbcon.php';
 <div class="container bg-white col-xl-10 col-sm-12">
   
       
-  <h4 class="title text-center">حصص الاساتذة</h4>
+  <h4 class="title text-center">قائمة  الاساتذة</h4>
    <div class="filter">
 
         <?php include('message.php'); ?>

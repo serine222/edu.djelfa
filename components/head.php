@@ -11,5 +11,6 @@
     <link rel="icon" href="../img/logo-sm.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
 <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;600;700;800&family=Tilt+Neon&display=swap" rel="stylesheet">
     </head>
