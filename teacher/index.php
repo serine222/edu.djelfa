@@ -37,6 +37,7 @@ require '../dbcon.php';
                                 </tr>
                             </thead>
                             <tbody>
+                           
                                 <?php 
                                     $query = "SELECT * FROM teachers";
                                     $query_run = mysqli_query($con, $query);
@@ -67,19 +68,19 @@ require '../dbcon.php';
                                                             <form action="code.php" method="POST" class="d-inline">
                                                         <button type="submit" name="delete_teacher" value="<?= $teacher['id_teacher']; ?>" class="dropdown-item"><i style="color: red" class="fa fa-trash"></i>&nbsp; حذف بيانات الاستاذ</button>
                                                     </form>
-
-
-
-                                                </td>
-                                            </tr>
-                                            <?php
+              <?php
                                         }
                                     }
                                     else
                                     {
-                                        echo "<h5> No Record Found </h5>";
+                                        echo "<td> No Record Found </td>";
                                     }
                                 ?>
+                                      
+                                      
+                                                </td>
+                                            </tr>
+                                    
                                 
                             </tbody>
                         </table>
