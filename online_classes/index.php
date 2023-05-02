@@ -10,7 +10,7 @@ include '../components/header.php';
     <div class="Zoom-classes">
        <h2 class="text-center mt-5 mb-5 fw-bold">حصص اونلاين</h2>
        <div class="justify-content-between d-flex ">
-          <h5 class="fw-bold">الحصص المبرمجة مع التفاصيل</h5> 
+          <h5 class="fw-bold">الحصص المبرمجة مع التفاصيل </h5> 
           <a href="add.php"><button class="btn" id="#btn"><i class="fa-solid fa-plus"></i>اضافة حصة جديدة</button></a>
        </div>
        <table class="table table-hover shadow text-center">
