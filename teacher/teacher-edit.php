@@ -8,20 +8,16 @@ require '../dbcon.php';
 <body>
 <?php include '../components/header.php';?>
   
-    <div class="container mt-5">
-
+    <div class="container col-xl-10 col-sm-12">
         <?php include('message.php'); ?>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>teacher Edit 
-                            <a href="index.php" class="btn btn-danger float-end">BACK</a>
-                        </h4>
-                    </div>
-                    <div class="card-body">
-
+        <div class="card shadow m-5">
+           <div class="card-header">
+                <div class="justify-content-between d-flex p-2">
+                    <h4 class="fw-bold">تعديل معلومات الاستاذ </h4>
+                    <a href="index.php" class="btn btn-danger">رجوع  <i class="fa-solid fa-arrow-left"></i></a>
+                </div>
+           </div>
+           <div class="card-body">
                         <?php
                         if(isset($_GET['id']))
                         {
@@ -33,7 +29,7 @@ require '../dbcon.php';
                             {
                                 $teacher = mysqli_fetch_array($query_run);
                                 ?>
-                                <form action="code.php" method="POST">
+                                <form class="form" action="code.php" method="POST">
                                     <input type="hidden" name="id_teacher" value="<?= $teacher['id_teacher']; ?>">
 
                                     <div class="mb-3">
@@ -41,7 +37,7 @@ require '../dbcon.php';
                                         <input type="text" name="name" value="<?=$teacher['Name'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>بريد الالكتروني</label>
+                                        <label>البريد الالكتروني</label>
                                         <input type="email" name="Email" value="<?=$teacher['Email'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
@@ -49,15 +45,16 @@ require '../dbcon.php';
                                         <input type="text" name="Password" value="<?=$teacher['Password'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>عنوان المعلم</label>
+                                        <label>العنوان </label>
                                         <input type="text" name="Address" value="<?=$teacher['Address'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>تاريخ انضمام المعلم</label>
+                                        <label>تاريخ الانضمام</label>
                                         <input type="text" name="Joining_Date" value="<?=$teacher['Joining_Date'];?>" class="form-control">
                                     </div>
+                                    <hr>
                                     <div class="mb-3">
-                                        <button type="submit" name="update_teacher" class="btn btn-primary">
+                                        <button type="submit" name="update_teacher" class="btn">
                                             تعديل
                                         </button>
                                     </div>
@@ -72,12 +69,11 @@ require '../dbcon.php';
                         }
                         ?>
                     </div>
-                </div>
-            </div>
+           </div>
         </div>
     </div>
-    <?php include '../components/footer.php';?>
 
+    <?php include '../components/footer.php';?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

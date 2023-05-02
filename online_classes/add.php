@@ -1,167 +1,137 @@
 
-<?php include '../components/head.php';
+<?php 
+include '../components/head.php';
 require '../dbcon.php';
-
 ?>
 
 <body>
 <?php include '../components/header.php';?>
-<!-- row -->
+ <!-- row -->
 <div class="container bg-white col-xl-10 col-sm-12" >
     <div class="container">
-     <div class="card no-border shadow">
+        <div class="card no-border shadow m-4 ">
+           <div class="card-header">
+                <div class="justify-content-between d-flex p-2">
+                   <h4 class="fw-bold">اضافة حصة جديدة</h4> 
+                   <a href="index.php" class="btn btn-danger">رجوع  <i class="fa-solid fa-arrow-left"></i></a>
+               </div>
+           </div>
+           <div class="card-body">
+                <form class="form" method="post" action="code.php" >
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label >السنة الدراسية <span class="text-danger">*</span></label>
+                            <select class="custom-select mr-sm-2" name="classroom_id">
+                                <option selected disabled> السنوات الدراسية </option>
 
-<div class="card-body">
-<div>
-              <h4 class="title text-center">اضافة حصة جديدة</h4>
-            </div>
+                                <?php 
+                                $query = "SELECT * FROM classrooms";
+                                $query_run = mysqli_query($con, $query);
 
-<form method="post" action="code.php" >
-    
-<div class="row">
+                                if(mysqli_num_rows($query_run) > 0)
+                                {
+                                    foreach($query_run as $class)
+                                    {
+                                        ?>
+                                <option value='<?= $class['classroom_id']; ?>'><?= $class['Name_Class']; ?> </option>
 
+                                <?php      }
+                                    }
+                                    else
+                                    {
+                                        echo "<h5> No Record Found </h5>";
+                                    }
+                                ?>
 
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label >الاستاذ<span class="text-danger">*</span></label>
+                            <select class="custom-select mr-sm-2" name="id_teacher">
+                                <option selected disabled> الاساتذة</option>
 
-<div class="col-md-4">
-<div class="form-group">
-<label >السنة الدراسية <span
-        class="text-danger">*</span></label>
-<select class="custom-select mr-sm-2" name="classroom_id">
-    <option selected disabled> السنوات الدراسية </option>
+                                    <?php 
+                                    $query = "SELECT * FROM teachers";
+                                    $query_run = mysqli_query($con, $query);
 
-    <?php 
-    $query = "SELECT * FROM classrooms";
-    $query_run = mysqli_query($con, $query);
+                                    if(mysqli_num_rows($query_run) > 0)
+                                    {
+                                        foreach($query_run as $teacher)
+                                        {
+                                            ?>
+                               <option value='<?= $teacher['id_teacher']; ?>'><?= $teacher['Name']; ?> </option>
 
-    if(mysqli_num_rows($query_run) > 0)
-    {
-        foreach($query_run as $class)
-        {
-            ?>
-<option value='<?= $class['classroom_id']; ?>'><?= $class['Name_Class']; ?> </option>
-
-<?php      }
-    }
-    else
-    {
-        echo "<h5> No Record Found </h5>";
-    }
-?>
-
-</select>
-</div>
-</div>
-
-
-
-<div class="col-md-4">
-<div class="form-group">
-<label >الاستاذ<span
-        class="text-danger">*</span></label>
-<select class="custom-select mr-sm-2" name="id_teacher">
-    <option selected disabled> الاساتذة</option>
-
-    <?php 
-    $query = "SELECT * FROM teachers";
-    $query_run = mysqli_query($con, $query);
-
-    if(mysqli_num_rows($query_run) > 0)
-    {
-        foreach($query_run as $teacher)
-        {
-            ?>
-<option value='<?= $teacher['id_teacher']; ?>'><?= $teacher['Name']; ?> </option>
-
-<?php      }
-    }
-    else
-    {
-        echo "<h5> No Record Found </h5>";
-    }
-?>
-</select>
-</div>
-</div>
-
-<div class="col-md-4">
-    <div class="form-group">
-        <label>رقم الاجتماع : <span class="text-danger">*</span></label>
-        <input class="form-control" name="meeting_id" type="number">
-</div>
-</div>
-
-
-        
-    </div><br>
-    <div class="row">
-
-
-
-
-<div class="col-md-3">
-    <div class="form-group">
-        <label>عنوان الحصة : <span class="text-danger">*</span></label>
-        <input class="form-control" name="topic" type="text">
-    </div>
-</div>
-
-<div class="col-md-3">
-    <div class="form-group">
-        <label>تاريخ ووقت الحصة : <span class="text-danger">*</span></label>
-        <input class="form-control" type="datetime-local" name="start_time">
-    </div>
-</div>
-<div class="col-md-3">
-    <div class="form-group">
-        <label>مدة الحصة بالدقائق : <span class="text-danger">*</span></label>
-        <input class="form-control" name="duration" type="number">
-    </div>
-</div>
-
-<div class="col-md-3">
-    <div class="form-group">
-        <label>كلمة المرور الاجتماع : <span class="text-danger">*</span></label>
-        <input class="form-control" name="password" type="text">
-    </div>
-</div>
-
-
-</div>
-
-<div class="row">
-
-<div class="col-md-4">
-    <div class="form-group">
-        <label>لينك البدء : <span class="text-danger">*</span></label>
-        <input class="form-control" name="start_url" type="text">
-    </div>
-</div>
-
-<div class="col-md-8">
-    <div class="form-group">
-        <label>لينك الدخول للطلاب : <span class="text-danger">*</span></label>
-        <input class="form-control" name="join_url" type="text">
-    </div>
-</div>
-</div>
-
-                        
-
+                                <?php      }
+                                    }
+                                    else
+                                    {
+                                        echo "<h5> No Record Found </h5>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>عنوان الحصة : <span class="text-danger">*</span></label>
+                            <input class="form-control" name="topic" type="text">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>المادة: <span class="text-danger">*</span></label>
+                            <input class="form-control" name="topic" type="text">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>تاريخ ووقت الحصة : <span class="text-danger">*</span></label>
+                            <input class="form-control" type="datetime-local" name="start_time">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>مدة الحصة بالدقائق : <span class="text-danger">*</span></label>
+                            <input class="form-control" name="duration" type="number">
+                        </div>
+                        <div class="form-group col-md-6">
+                                <label>رقم الاجتماع : <span class="text-danger">*</span></label>
+                                <input class="form-control" name="meeting_id" type="number">
+                        </div>
+                        <div class="form-group col-md-6">
+                                <label>كلمة المرور الاجتماع : <span class="text-danger">*</span></label>
+                                <input class="form-control" name="password" type="text">
+                        </div>
                     </div>
-                    
-                    <button class="btn btn-success btn-sm nextBtn btn-lg pull-right"
-                        type="submit" name="save_online_classe">بدأ الحصة</button>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                           <label>لينك البدء : <span class="text-danger">*</span></label>
+                           <input class="form-control" name="start_url" type="text">
+                        </div>
+                        <div class="form-group col-md-8">
+                           <label>لينك الدخول للطلاب : <span class="text-danger">*</span></label>
+                           <input class="form-control" name="join_url" type="text">
+                        </div>        
+                    </div><hr>
+                    <div class="btnn">
+                         <button type="submit" name="save_online_classe" class="btn">اضافة الحصة</button>
+                         <a href="#" class="btn" id="cancel">الغاء</a>
+                    </div>
                 </form>
+           </div>
+        </div>            
+    </div>
+</div>
 
+ <!-- Modal -->
+   <!-- <div class="modal fade" id="m1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <br><br><br><br><br><br><br>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <img src="img/istockphoto-1164721866-612x612.jpg" alt="" style="width: 28%; margin-right: 200px; padding: 0;">
+            <div class="modal-body text-center">
+                <h5>خطا , يرجى التاكد من ملا جميع الخانات</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">موافق</button>
+            </div>
             </div>
         </div>
-    </div>
-</div>
+   </div> -->
 
-<!-- row closed -->
 <?php include '../components/footer.php';?>
-
-
 
 <!-- 
 <script>

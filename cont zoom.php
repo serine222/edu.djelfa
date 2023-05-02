@@ -3,13 +3,10 @@
 	
 	namespace App\Helpers;
 
-
-
 class ZoomApiHelper{
 
 	public static function createZoomMeeting($meetingConfig = [],$fname =[],$jwtToken,$zoomUserId){
 		this.$jwtToken = $jwtToken;
-		
 		$requestBody = [
 			'topic'			=> $meetingConfig['topic'] 	,	
 			// ?? '=hjgvgugygfvghvgvfgvfggvvgfvgfvfggggggggg',
@@ -73,8 +70,6 @@ class ZoomApiHelper{
 		// echo "<br>";
 		// echo "Meeting Password: ". $response->password;
 
-
-
 		return $response;
 
 		$err = curl_error($curl);
@@ -96,9 +91,6 @@ class ZoomApiHelper{
 		}
 	}
 }
-
-
-
     echo ZoomApiHelper::createZoomMeeting();  
 
 
