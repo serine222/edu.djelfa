@@ -6,22 +6,18 @@ require '../dbcon.php';
 
 
 <body>
-<?php include '../components/header.php';?>
-  
-    <div class="container mt-5">
+    <?php include '../components/header.php';?>
 
+    <div class="container col-xl-10 col-sm-12">
         <?php include('message.php'); ?>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>تعديل بيانات الطالب
-                            <a href="index.php" class="btn btn-danger float-end">الخلف</a>
-                        </h4>
-                    </div>
-                    <div class="card-body">
-
+        <div class="card shadow m-5">
+           <div class="card-header">
+                <div class="justify-content-between d-flex p-2">
+                    <h4 class="fw-bold">تعديل معلومات الطالب </h4>
+                    <a href="index.php" class="btn btn-danger">رجوع  <i class="fa-solid fa-arrow-left"></i></a>
+                </div>
+           </div>
+           <div class="card-body">
                         <?php
                         if(isset($_GET['id']))
                         {
@@ -33,7 +29,7 @@ require '../dbcon.php';
                             {
                                 $student = mysqli_fetch_array($query_run);
                                 ?>
-                                <form action="code.php" method="POST">
+                                <form class="form" action="code.php" method="POST">
                                     <input type="hidden" name="student_id" value="<?= $student['id']; ?>">
 
                                     <div class="mb-3">
@@ -41,16 +37,16 @@ require '../dbcon.php';
                                         <input type="text" name="name" value="<?=$student['name'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>بريد لاالكتروني</label>
+                                        <label>البريد لاالكتروني</label>
                                         <input type="email" name="email" value="<?=$student['email'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
-                                        <label>هاتف</label>
+                                        <label>رقم الهاتف</label>
                                         <input type="text" name="phone" value="<?=$student['phone'];?>" class="form-control">
                                     </div>
-
+                                    <hr>
                                     <div class="mb-3">
-                                        <button type="submit" name="update_student" class="btn btn-primary">
+                                        <button type="submit" name="update_student" class="btn">
                                             تعديل
                                         </button>
                                     </div>
@@ -64,13 +60,11 @@ require '../dbcon.php';
                             }
                         }
                         ?>
-                    </div>
-                </div>
-            </div>
+           </div>
         </div>
-    </div>
-    <?php include '../components/footer.php';?>
+   </div>
 
+    <?php include '../components/footer.php';?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

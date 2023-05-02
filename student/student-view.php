@@ -1,25 +1,19 @@
 <?php
 require '../dbcon.php';
 ?>
-
 <?php include '../components/head.php';?>
-
-
 <body>
-<?php include '../components/header.php';?>
-
-    <div class="container mt-5">
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>طالب 
-                            <a href="index.php" class="btn btn-danger float-end">الخلف</a>
-                        </h4>
-                    </div>
-                    <div class="card-body">
-
+    <?php include '../components/header.php';?>
+    <div class="container bg-white col-xl-10 col-sm-12">
+        <div class="card shadow m-5">
+           <div class="card-header">
+                        <div class="justify-content-between d-flex p-2">
+                           <h4 class="fw-bold">معلومات الطالب </h4>
+                           <a href="index.php" class="btn btn-danger">رجوع  <i class="fa-solid fa-arrow-left"></i></a>
+                       </div>
+           </div>      
+           <div class="card-body">
+                <form class="form">
                         <?php
                         if(isset($_GET['id']))
                         {
@@ -30,7 +24,7 @@ require '../dbcon.php';
                             if(mysqli_num_rows($query_run) > 0)
                             {
                                 $student = mysqli_fetch_array($query_run);
-                                ?>
+                        ?>
                                 
                                     <div class="mb-3">
                                         <label>اسم الطالب</label>
@@ -39,21 +33,18 @@ require '../dbcon.php';
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>بريد الكتروني</label>
+                                        <label>البريد الكتروني</label>
                                         <p class="form-control">
                                             <?=$student['email'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>هاتف</label>
+                                        <label>الهاتف</label>
                                         <p class="form-control">
                                             <?=$student['phone'];?>
                                         </p>
                                     </div>
-                                 
-
-
-<?php
+                               <?php
                                                 $classroom_id = $student['classroom_id'];
                                                 $query = "SELECT * FROM classrooms WHERE classroom_id='$classroom_id' ";
                                                $query_run = mysqli_query($con, $query);
@@ -61,12 +52,8 @@ require '../dbcon.php';
                                                     {
                                                         $class = mysqli_fetch_array($query_run);
                                                         ?>
-
-
-
-
                                                         <div class="mb-3">
-                                                        <label>المستوى</label>
+                                                        <label>المستوى الدراسي</label>
                                                         <p class="form-control">
                                                         <?=$class['Name_Class']; ?>
                                                         </p>
@@ -80,11 +67,6 @@ require '../dbcon.php';
                                                     }
                                                 
                                                 ?>
-
-                                    
-
-                                   
-
                                 <?php
                             }
                             else
@@ -93,14 +75,12 @@ require '../dbcon.php';
                             }
                         }
                         ?>
-                    </div>
-                </div>
-            </div>
+                </form>        
+           </div>
         </div>
     </div>
+
     <?php include '../components/footer.php';?>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

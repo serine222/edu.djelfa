@@ -1,7 +1,4 @@
 
-
-
-  
   <!-- nav-bar-->
   <nav class="navbar navbar-expand-md sticky-top fixed-top shadow text-white">
     <div class="container-fluid	">

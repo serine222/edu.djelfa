@@ -6,20 +6,17 @@ require '../dbcon.php';
 
 
 <body>
-<?php include '../components/header.php';?>
-
-    <div class="container ">
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>الاستاذ 
-                            <a href="index.php" class="btn btn-danger float-end">خلف</a>
-                        </h4>
-                    </div>
-                    <div class="card-body">
-
+    <?php include '../components/header.php';?>
+    <div class="container col-xl-10 col-sm-12">
+        <div class="card shadow m-5">
+           <div class="card-header">
+                <div class="justify-content-between d-flex p-2">
+                    <h4 class="fw-bold">معلومات الاستاذ </h4>
+                    <a href="index.php" class="btn btn-danger">رجوع  <i class="fa-solid fa-arrow-left"></i></a>
+                </div>
+           </div> 
+           <div class="card-body">
+               <form class="form">
                         <?php
                         if(isset($_GET['id']))
                         {
@@ -39,19 +36,19 @@ require '../dbcon.php';
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>بريد الالكتروني</label>
+                                        <label>البريد الالكتروني</label>
                                         <p class="form-control">
                                             <?=$teacher['Email'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>موقع</label>
+                                        <label>العنوان</label>
                                         <p class="form-control">
                                             <?=$teacher['Address'];?>
                                         </p>
                                     </div>
                                     <div class="mb-3">
-                                        <label>تاريخ انضمام المعلم</label>
+                                        <label>تاريخ الانضمام </label>
                                         <p class="form-control">
                                             <?=$teacher['Joining_Date'];?>
                                         </p>
@@ -66,10 +63,11 @@ require '../dbcon.php';
                         }
                         ?>
                     </div>
-                </div>
-            </div>
-        </div>
-        </div>
+                    </div>
+               </form>
+           </div>
+       </div>
+   </div>
  
 
     <?php include '../components/footer.php';?>

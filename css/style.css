@@ -4,8 +4,6 @@
 }
 
 html{
-   
-  
     font-size: 1rem;
     box-sizing: border-box;
     scrollbar-color: var(--main-color);
@@ -13,22 +11,17 @@ html{
     scroll-behavior: smooth;
 }
 
-
 body{
     font-family: 'Noto Kufi Arabic', sans-serif;
 }
 
-
-
 /*navbar*/
-
 .navbar{
     background-color: var(--main-color);
     padding: 0;
 }
 .navbar .navbar-nav .nav-link{
     color: white;
-    
 }
 .navbar .navbar-toggler{
     color: white;
@@ -38,12 +31,10 @@ body{
     box-shadow: none;
 }
 
-
-
-.df{
+/* .df{
     background-color: var(--main-color);
     color: white;
-}
+} */
 
 /*button*/
 .btn{
@@ -58,40 +49,29 @@ body{
 }
 
 
-.t-table{
+/* .t-table{
     display:flex;
     margin-bottom: 16px;
     margin-top: 100px;
-}
+} */
 
-.filter{
-    text-align: right;
-    font-weight: 500;
-    padding-left: 5px;
-    padding-right:5px ;
-    min-height: calc(100vh - 72px);
-}
-.title{
-    margin-top: 30px;
-    margin-bottom: 40px;
-    font-weight: 800;
-}
-.title2{
-    font-weight: 600;
-}
+
 .card{
     margin-top: 60px;
 }
+
 .online-corses .row{
     background-color: white;
     min-height: calc(100vh - 72px);
     align-items: center;
 }   
+
 .form{
     text-align: right;
-    
 } 
-
+.btnn{
+    text-align: left;
+}
 span{
     color: var(--main-color);
 }
@@ -103,9 +83,7 @@ span{
     padding: 2px;
 }
 
-
-
-  
+/* footer   */
 .site-footer {
     background-color: #26272b;
     padding: 45px 0 20px;
@@ -184,9 +162,3 @@ span{
     font-size: 16px;
     color: rgb(223, 223, 223);
 }
-
-
-
-/* .site-footer{
-    background-color: #26272b;
-} */

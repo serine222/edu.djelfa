@@ -1,6 +1,4 @@
-<!-- <div class="footer">© 2023 <span>edu.djelfa</span> All Right Reserved</div> -->
-
-
+<!--footer-->
 <footer class="site-footer">
   <div class="container text-right col-lg-10 col-md-12">
       <div class="row">
@@ -50,11 +48,9 @@
   </div>
 </footer>
   
-  
-  <!--custom js file-->
-
-  <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+<!--custom js file-->
+   <script src="../js/jquery-3.3.1.min.js"></script>
+   <script src="../js/popper.min.js"></script>
+   <script src="../js/bootstrap.min.js"></script>
 </body>
 </html>

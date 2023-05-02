@@ -93,12 +93,5 @@ if(isset($_POST['save_online_classe']))
     }
 }
 
-
-
-
-
-
-
-
 ?>
 

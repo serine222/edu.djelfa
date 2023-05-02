@@ -11,7 +11,7 @@ if(isset($_POST['delete_teacher']))
 
     if($query_run)
     {
-        $_SESSION['message'] = "teacher Deleted Successfully";
+        $_SESSION['message'] = "تم حذف المعلم بنجاح";
         header("Location: index.php");
         exit(0);
     }
@@ -42,7 +42,7 @@ if(isset($_POST['update_teacher']))
 
     if($query_run)
     {
-        $_SESSION['message'] = "teacher Updated Successfully";
+        $_SESSION['message'] = "تم تعديل بيانات الاستاذ بنجاح  !";
         header("Location: index.php");
         exit(0);
     }
@@ -75,7 +75,7 @@ if(isset($_POST['save_teacher']))
     $query_run = mysqli_query($con, $query);
     if($query_run)
     {
-        $_SESSION['message'] = "teacher Created Successfully";
+        $_SESSION['message'] = "تم إنشاء الاستاذ بنجاح !";
         header("Location: teacher-create.php");
         exit(0);
     }
