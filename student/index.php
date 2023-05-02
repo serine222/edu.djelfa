@@ -40,19 +40,19 @@ require '../dbcon.php';
                                     <td><?= $student['email']; ?></td>
                                     <td><?= $student['phone']; ?></td>
                                     <td>
-                                                                <div class="dropdown show">
-                                                                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                        العمليات
-                                                                    </a>
-                                                                    <div class="form dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                                        <a class="dropdown-item" href="student-view.php?id=<?= $student['id']; ?>"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp;  عرض بيانات الطالب</a>
-                                                                        <a class="dropdown-item" href="student-edit.php?id=<?= $student['id']; ?>"><i style="color:green" class="fa fa-edit"></i>&nbsp;  تعديل بيانات الطالب</a>
-                                                                        <a class="dropdown-item" href="online_classes.php?id=<?= $student['id']; ?>"><i class="fa fa-desktop" aria-hidden="true"></i>  الحصص الخاصة بالطالب</a>
-                                                                        <form action="code.php" method="POST" class="d-inline">
-                                                                        <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="dropdown-item"><i style="color: red" class="fa fa-trash"></i>&nbsp; حذف بيانات الطالب</button>
-                                                                        </form>  
-                                                                    </div>
-                                                                </div>
+                                        <div class="dropdown show">
+                                            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                العمليات
+                                            </a>
+                                            <div class="form dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a class="dropdown-item" href="student-view.php?id=<?= $student['id']; ?>"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp;  عرض بيانات الطالب</a>
+                                                <a class="dropdown-item" href="student-edit.php?id=<?= $student['id']; ?>"><i style="color:green" class="fa fa-edit"></i>&nbsp;  تعديل بيانات الطالب</a>
+                                                <a class="dropdown-item" href="online_classes.php?id=<?= $student['id']; ?>"><i class="fa fa-desktop" aria-hidden="true"></i>  الحصص الخاصة بالطالب</a>
+                                                <form action="code.php" method="POST" class="d-inline">
+                                                <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="dropdown-item"><i style="color: red" class="fa fa-trash"></i>&nbsp; حذف بيانات الطالب</button>
+                                                </form>  
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                                 <?php
